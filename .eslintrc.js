@@ -12,12 +12,7 @@ module.exports = {
     "no-use-before-define": "off",
     "react/prop-types": "off",
     "prettier/prettier": [
-      "error",
-      {
-        singleQuote: true,
-        semi: false
-      }
-    ],
-    semi: ["error", "never"]
+      "error"
+    ]
   }
 };

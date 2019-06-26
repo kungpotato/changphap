@@ -1,6 +1,16 @@
-const admin = require('firebase-admin');
-const functions = require('firebase-functions');
+import * as firebase from "firebase/app";
+import "firebase/auth";
+import "firebase/firestore";
 
-const Firebase = admin.initializeApp(functions.config().firebase);
+var firebaseConfig = {
+    apiKey: process.env.FIREBASE_apiKey,
+    authDomain: process.env.FIREBASE_authDomain,
+    databaseURL: process.env.FIREBASE_databaseURL,
+    projectId: process.env.FIREBASE_projectId,
+    storageBucket: process.env.FIREBASE_storageBucket,
+    messagingSenderId: process.env.FIREBASE_messagingSenderId,
+    FIREBASE_appId: process.env.FIREBASE_appId
+  };
 
-export default Firebase
+  const Firebase = !firebase.apps.length ? firebase.initializeApp(firebaseConfig) : firebase.app();
+  export default Firebase
