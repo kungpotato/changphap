@@ -1,11 +1,7 @@
-import Test from "../components/Test";
+import Test from '../components/Test'
 
 const Home = () => {
-  return (
-    <div>
-      <Test />
-    </div>
-  )
+  return <h1>HI</h1>
 }
 
-export default Home;
+export default Home
