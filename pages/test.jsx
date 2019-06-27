@@ -1,3 +1,4 @@
+import React from 'react';
 import Firebase from '../firebase'
 import Test from '../components/Test'
 
