@@ -1,9 +1,13 @@
 import React from 'react'
-import getsUser from '../auth/authen'
+import { getsUserFromGoogle, getsUserFromFacebook } from '../auth/authen'
 
 const Home = () => {
   const handleLoginGoogle = async () => {
-    let res = await getsUser()
+    let res = await getsUserFromGoogle()
+    console.log(res)
+  }
+  const handleLoginFacebook = async () => {
+    let res = await getsUserFromFacebook()
     console.log(res)
   }
 
@@ -13,6 +17,9 @@ const Home = () => {
       <h2>Hello</h2>
       <button type="button" onClick={handleLoginGoogle}>
         login google
+      </button>
+      <button type="button" onClick={handleLoginFacebook}>
+        login facebook
       </button>
       <style jsx>
         {`
