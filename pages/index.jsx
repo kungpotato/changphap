@@ -1,18 +1,18 @@
 import React from 'react'
 import Head from 'next/head'
 import '../styles/styles.less'
-import { getsUserFromGoogle, getsUserFromFacebook } from '../auth/authen'
+// import { getsUserFromGoogle, getsUserFromFacebook } from '../auth/authen'
 import Header from '../components/Header'
 
 const Home = () => {
-  const handleLoginGoogle = async () => {
-    let res = await getsUserFromGoogle()
-    console.log(res)
-  }
-  const handleLoginFacebook = async () => {
-    let res = await getsUserFromFacebook()
-    console.log(res)
-  }
+  // const handleLoginGoogle = async () => {
+  //   let res = await getsUserFromGoogle()
+  //   console.log(res)
+  // }
+  // const handleLoginFacebook = async () => {
+  //   console.log(res)
+  //   let res = await getsUserFromFacebook()
+  // }
 
   return (
     <div>
@@ -45,30 +45,15 @@ const Home = () => {
           }}
         >
           <img
-            src="./static/images/bride-1867318_1920.jpg"
+            src="./static/images/photography.jpg"
             alt=""
             style={{
               width: '100%',
-              height: 'auto',
               position: 'relative',
             }}
           />
         </div>
       </div>
-      <div className="test">Test</div>
-      <button type="button" onClick={handleLoginGoogle}>
-        login google
-      </button>
-      <button type="button" onClick={handleLoginFacebook}>
-        login facebook
-      </button>
-      <style jsx>
-        {`
-          .test {
-            text-decoration: underline;
-          }
-        `}
-      </style>
     </div>
   )
 }

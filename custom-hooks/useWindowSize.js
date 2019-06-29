@@ -8,6 +8,8 @@ const useWindowSize = () => {
     return {
       width: isClient ? window.innerWidth : undefined,
       height: isClient ? window.innerHeight : undefined,
+      outerWidth: isClient ? window.outerWidth : undefined,
+      outerHeight: isClient ? window.outerHeight : undefined,
     }
   }, [isClient])
 

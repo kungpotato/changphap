@@ -12,12 +12,13 @@
     "firebase": "6.2.3",
     "firebase-admin": "8.2.0",
     "isomorphic-unfetch": "3.0.0",
-    "less": "^3.9.0",
+    "less": "3.9.0",
     "mobx": "5.10.1",
     "mobx-react-lite": "1.4.1",
     "next": "8.1.0",
     "react": "16.8.6",
     "react-dom": "16.8.6",
+    "styled-components": "^4.3.2",
     "styled-jsx": "3.2.1",
     "webpack": "4.35.0"
   },
@@ -39,6 +40,7 @@
     "eslint-plugin-prettier": "3.1.0",
     "eslint-plugin-react": "7.11.0",
     "eslint-plugin-react-hooks": "1.6.1",
+    "nodemon": "1.19.1",
     "prettier": "1.18.2"
   },
   "scripts": {

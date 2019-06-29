@@ -16,6 +16,7 @@ const useStyles = makeStyles({
     color: '#fff',
     fontWeight: 'normal',
     paddingRight: '10px',
+    fontFamily: 'Mitr',
   },
 })
 
@@ -50,11 +51,13 @@ const Header = () => {
       >
         <Toolbar>
           <Link href="/">
-            <img
-              src="./static/images/logo1.png"
-              alt=""
-              style={{ width: '150px', cursor: 'pointer' }}
-            />
+            <Button className={classes.menu}>
+              <img
+                src="./static/images/logo1.png"
+                alt=""
+                style={{ width: '150px', cursor: 'pointer' }}
+              />
+            </Button>
           </Link>
 
           {isShow ? (
@@ -71,10 +74,8 @@ const Header = () => {
             </div>
           ) : (
             <div style={{ marginLeft: 'auto' }}>
-              <IconButton onClick={handleClick}>
-                <Button className={classes.menu}>
-                  <i className="material-icons">menu</i>
-                </Button>
+              <IconButton onClick={handleClick} className={classes.menu}>
+                <i className="material-icons">menu</i>
               </IconButton>
             </div>
           )}
