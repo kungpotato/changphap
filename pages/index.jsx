@@ -1,6 +1,8 @@
 import React from 'react'
 import Head from 'next/head'
+import '../styles/styles.less'
 import { getsUserFromGoogle, getsUserFromFacebook } from '../auth/authen'
+import Header from '../components/Header'
 
 const Home = () => {
   const handleLoginGoogle = async () => {
@@ -25,9 +27,35 @@ const Home = () => {
           rel="stylesheet"
           href="https://fonts.googleapis.com/icon?family=Material+Icons"
         />
+        <link
+          href="https://fonts.googleapis.com/css?family=Mitr&display=swap"
+          rel="stylesheet"
+        />
       </Head>
-      <h1>kungpotato</h1>
-      <h2>Hello</h2>
+      <Header />
+      <div className="root">
+        <div
+          style={{
+            width: '100%',
+            position: 'absolute',
+            top: '0',
+            zIndex: '-1',
+            height: '70%',
+            overflow: 'hidden',
+          }}
+        >
+          <img
+            src="./static/images/bride-1867318_1920.jpg"
+            alt=""
+            style={{
+              width: '100%',
+              height: 'auto',
+              position: 'relative',
+            }}
+          />
+        </div>
+      </div>
+      <div className="test">Test</div>
       <button type="button" onClick={handleLoginGoogle}>
         login google
       </button>
@@ -36,11 +64,8 @@ const Home = () => {
       </button>
       <style jsx>
         {`
-          h1 {
-            color: #4287f5;
-          }
-          h2 {
-            color: #43cc31;
+          .test {
+            text-decoration: underline;
           }
         `}
       </style>

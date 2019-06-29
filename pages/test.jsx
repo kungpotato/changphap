@@ -1,10 +1,13 @@
 import React from 'react'
+import '../styles/styles.less'
 import Firebase from '../firebase'
 import Test from '../components/Test'
+import Header from '../components/Header'
 
 const TestPage = ({ result }) => {
   return (
     <div>
+      <Header />
       <Test data={result} />
     </div>
   )

@@ -1,7 +1,8 @@
 const webpack = require('webpack')
+const withLess = require('@zeit/next-less')
 require('dotenv').config()
 
-module.exports = {
+module.exports = withLess({
   webpack: (config, { dev }) => {
     const env = Object.keys(process.env).reduce((acc, curr) => {
       acc[`process.env.${curr}`] = JSON.stringify(process.env[curr])
@@ -9,7 +10,7 @@ module.exports = {
     }, {})
 
     config.plugins.push(new webpack.DefinePlugin(env))
-
+    console.log(dev)
     if (dev) {
       config.module.rules.push({
         test: /\.js$/,
@@ -23,4 +24,4 @@ module.exports = {
 
     return config
   },
-}
+})
