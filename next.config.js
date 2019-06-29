@@ -10,7 +10,7 @@ module.exports = withLess({
     }, {})
 
     config.plugins.push(new webpack.DefinePlugin(env))
-    console.log(dev)
+
     if (dev) {
       config.module.rules.push({
         test: /\.js$/,

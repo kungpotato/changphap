@@ -6,12 +6,24 @@ import Link from 'next/link'
 import IconButton from '@material-ui/core/IconButton'
 import Menu from '@material-ui/core/Menu'
 import MenuItem from '@material-ui/core/MenuItem'
+import Button from '@material-ui/core/Button'
+import { makeStyles } from '@material-ui/styles'
 import useWindowSize from '../custom-hooks/useWindowSize'
+
+const useStyles = makeStyles({
+  menu: {
+    cursor: 'pointer',
+    color: '#fff',
+    fontWeight: 'normal',
+    paddingRight: '10px',
+  },
+})
 
 const Header = () => {
   const [isShow, setIsShow] = useState(true)
   const [anchorEl, setAnchorEl] = useState(null)
   let windowSize = useWindowSize()
+  const classes = useStyles()
 
   useEffect(() => {
     if (windowSize.width < 700) {
@@ -48,19 +60,21 @@ const Header = () => {
           {isShow ? (
             <div style={{ marginLeft: 'auto' }}>
               <Link href="/">
-                <div className="menu">บทความ</div>
+                <Button className={classes.menu}>บทความ</Button>
               </Link>
               <Link href="/">
-                <div className="menu">สมัครช่างภาพ</div>
+                <Button className={classes.menu}>สมัครช่างภาพ</Button>
               </Link>
               <Link href="/">
-                <div className="menu">เข้าสู่ระบบ</div>
+                <Button className={classes.menu}>เข้าสู่ระบบ</Button>
               </Link>
             </div>
           ) : (
             <div style={{ marginLeft: 'auto' }}>
               <IconButton onClick={handleClick}>
-                <i className="material-icons menu">menu</i>
+                <Button className={classes.menu}>
+                  <i className="material-icons">menu</i>
+                </Button>
               </IconButton>
             </div>
           )}
