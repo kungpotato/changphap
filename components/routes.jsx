@@ -25,9 +25,9 @@ const useStyles = makeStyles({
 
 const routes = [
   { routeName: 'ค้นหาช่างภาพ', path: '/browse' },
-  { routeName: 'บทความ', path: '/' },
-  { routeName: 'สมัครช่างภาพ', path: '/' },
-  { routeName: 'เข้าสู่ระบบ', path: '/' },
+  { routeName: 'บทความ', path: '/content' },
+  { routeName: 'สมัครช่างภาพ', path: null },
+  { routeName: 'เข้าสู่ระบบ', path: null },
 ]
 
 const Routes = ({ menuType, close, router }) => {
@@ -55,7 +55,10 @@ const Routes = ({ menuType, close, router }) => {
           {routes.map(item =>
             // ส่วนของ main menu
             menuType == 'main' ? (
-              <Link key={item.routeName} href={item.path}>
+              <Link
+                key={item.routeName}
+                href={item.path === null ? item.path : ' '}
+              >
                 <Button
                   style={{
                     color: router.pathname === '/' ? '#fff' : '#48BFA3',
@@ -69,8 +72,8 @@ const Routes = ({ menuType, close, router }) => {
               </Link>
             ) : (
               // ส่วนของ menu responsive
-              <MenuItem onClick={close}>
-                <Link key={item.routeName} href={item.path}>
+              <MenuItem key={item.routeName} onClick={close}>
+                <Link href={item.path}>
                   <Button
                     className={
                       menuType == 'main' ? classes.menu : classes.sideMenu
