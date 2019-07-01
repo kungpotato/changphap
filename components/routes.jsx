@@ -57,7 +57,7 @@ const Routes = ({ menuType, close, router }) => {
             menuType == 'main' ? (
               <Link
                 key={item.routeName}
-                href={item.path === null ? item.path : ' '}
+                href={item.path !== null ? item.path : ' '}
               >
                 <Button
                   style={{
