@@ -2,31 +2,43 @@ import React, { useEffect, useState } from 'react'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 // import Typography from '@material-ui/core/Typography'
-import Link from 'next/link'
 import IconButton from '@material-ui/core/IconButton'
 import Menu from '@material-ui/core/Menu'
-import MenuItem from '@material-ui/core/MenuItem'
-import Button from '@material-ui/core/Button'
 import { makeStyles } from '@material-ui/styles'
+import { withRouter } from 'next/router'
 import useWindowSize from '../custom-hooks/useWindowSize'
+import Routes from './routes'
 
 const useStyles = makeStyles({
   menu: {
-    cursor: 'pointer',
     color: '#fff',
     fontWeight: 'normal',
     paddingRight: '10px',
     fontFamily: 'Mitr',
   },
+  menu2: {
+    color: '#48BFA3',
+    fontWeight: 'normal',
+    paddingRight: '10px',
+    fontFamily: 'Mitr',
+  },
+  appbar: {
+    background: 'rgba(0,0,0,0.5)',
+  },
+  appbar2: {
+    background: '#fff',
+  },
 })
 
-const Header = () => {
+const Header = ({ router }) => {
   const [isShow, setIsShow] = useState(true)
   const [anchorEl, setAnchorEl] = useState(null)
   let windowSize = useWindowSize()
   const classes = useStyles()
 
   useEffect(() => {
+    // console.log(router.pathname)
+
     if (windowSize.width < 700) {
       setIsShow(false)
     } else {
@@ -47,34 +59,23 @@ const Header = () => {
       <AppBar
         position="static"
         color="default"
-        style={{ background: 'rgba(0,0,0,0.5)' }}
+        className={router.pathname === '/' ? classes.appbar : classes.appbar2}
       >
         <Toolbar>
-          <Link href="/">
-            <Button className={classes.menu}>
-              <img
-                src="./static/images/logo1.png"
-                alt=""
-                style={{ width: '150px', cursor: 'pointer' }}
-              />
-            </Button>
-          </Link>
+          <Routes menuType="logo" />
 
           {isShow ? (
             <div style={{ marginLeft: 'auto' }}>
-              <Link href="/">
-                <Button className={classes.menu}>บทความ</Button>
-              </Link>
-              <Link href="/">
-                <Button className={classes.menu}>สมัครช่างภาพ</Button>
-              </Link>
-              <Link href="/">
-                <Button className={classes.menu}>เข้าสู่ระบบ</Button>
-              </Link>
+              <Routes menuType="main" />
             </div>
           ) : (
             <div style={{ marginLeft: 'auto' }}>
-              <IconButton onClick={handleClick} className={classes.menu}>
+              <IconButton
+                onClick={handleClick}
+                className={
+                  router.pathname === '/' ? classes.menu : classes.menu2
+                }
+              >
                 <i className="material-icons">menu</i>
               </IconButton>
             </div>
@@ -82,30 +83,15 @@ const Header = () => {
         </Toolbar>
       </AppBar>
       <Menu
-        id="simple-menu"
         anchorEl={anchorEl}
         keepMounted
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        <MenuItem onClick={handleClose}>
-          <Link href="/">
-            <div className="side-menu">บทความ</div>
-          </Link>
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <Link href="/">
-            <div className="side-menu">สมัครช่างภาพ</div>
-          </Link>
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <Link href="/">
-            <div className="side-menu">เข้าสู่ระบบ</div>
-          </Link>
-        </MenuItem>
+        <Routes close={handleClose} />
       </Menu>
     </React.Fragment>
   )
 }
 
-export default Header
+export default withRouter(Header)
