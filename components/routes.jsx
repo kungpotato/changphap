@@ -16,7 +16,7 @@ const useStyles = makeStyles({
     fontFamily: 'Mitr',
   },
   sideMenu: {
-    color: '#2e2e2e',
+    color: '#404040',
     fontWeight: 'normal',
     paddingRight: '10px',
     float: 'left',
@@ -65,7 +65,7 @@ const Routes = ({ menuType, close, router }) => {
               >
                 <Button
                   style={{
-                    color: router.pathname === '/' ? '#fff' : '#48BFA3',
+                    color: router.pathname === '/' ? '#fff' : '#404040',
                   }}
                   className={
                     menuType == 'main' ? classes.menu2 : classes.sideMenu

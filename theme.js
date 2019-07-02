@@ -19,6 +19,7 @@ const theme = createMuiTheme({
   },
   typography: {
     fontFamily: ['"Mitr"', 'sans-serif'].join(','),
+    color: '#404040',
   },
 })
 

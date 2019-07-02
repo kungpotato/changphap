@@ -18,7 +18,7 @@ const useStyles = makeStyles({
     fontFamily: 'Mitr',
   },
   menu2: {
-    color: '#48BFA3',
+    color: '#404040',
     fontWeight: 'normal',
     paddingRight: '10px',
     fontFamily: 'Mitr',
