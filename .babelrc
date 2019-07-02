@@ -1,6 +1,7 @@
 {
   "presets": ["@babel/preset-react", "@babel/preset-flow", "next/babel"],
   "plugins": [
+    "emotion",
     ["styled-components", { "ssr": true }],
     "@babel/plugin-transform-flow-strip-types",
     "@babel/plugin-transform-react-jsx-source",

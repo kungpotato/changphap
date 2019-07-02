@@ -6,6 +6,7 @@ import IconButton from '@material-ui/core/IconButton'
 import Menu from '@material-ui/core/Menu'
 import { makeStyles } from '@material-ui/styles'
 import { withRouter } from 'next/router'
+import { Container, Grid } from '@material-ui/core'
 import useWindowSize from '../custom-hooks/useWindowSize'
 import Routes from './routes'
 
@@ -62,24 +63,28 @@ const Header = ({ router }) => {
         className={router.pathname === '/' ? classes.appbar : classes.appbar2}
       >
         <Toolbar>
-          <Routes menuType="logo" />
+          <Container maxWidth="lg">
+            <Grid container>
+              <Routes menuType="logo" />
 
-          {isShow ? (
-            <div style={{ marginLeft: 'auto' }}>
-              <Routes menuType="main" />
-            </div>
-          ) : (
-            <div style={{ marginLeft: 'auto' }}>
-              <IconButton
-                onClick={handleClick}
-                className={
-                  router.pathname === '/' ? classes.menu : classes.menu2
-                }
-              >
-                <i className="material-icons">menu</i>
-              </IconButton>
-            </div>
-          )}
+              {isShow ? (
+                <div style={{ marginLeft: 'auto', paddingTop: '15px' }}>
+                  <Routes menuType="main" />
+                </div>
+              ) : (
+                <div style={{ marginLeft: 'auto' }}>
+                  <IconButton
+                    onClick={handleClick}
+                    className={
+                      router.pathname === '/' ? classes.menu : classes.menu2
+                    }
+                  >
+                    <i className="material-icons">menu</i>
+                  </IconButton>
+                </div>
+              )}
+            </Grid>
+          </Container>
         </Toolbar>
       </AppBar>
       <Menu
