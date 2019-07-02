@@ -23,13 +23,12 @@ const useStyle = makeStyles(theme => ({
     background: '#fff',
     marginLeft: theme.spacing(1),
     marginRight: theme.spacing(1),
-    borderRadius: '7px',
   },
 }))
 
 const Browse = () => {
   const classes = useStyle()
-  const [loading, setLoading] = useState(true) // เปลี่ยนเป็น true เมื่อเดฟเสร็จ
+  const [loading, setLoading] = useState(false) // เปลี่ยนเป็น true เมื่อเดฟเสร็จ
   const [values, setValues] = React.useState({
     jobType: '',
     place: '',

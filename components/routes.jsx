@@ -46,7 +46,11 @@ const Routes = ({ menuType, close, router }) => {
                   : './static/images/logo2.png'
               }
               alt=""
-              style={{ width: '150px', cursor: 'pointer' }}
+              style={{
+                width: '150px',
+                cursor: 'pointer',
+                marginBottom: '10px',
+              }}
             />
           </Button>
         </Link>
