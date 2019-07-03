@@ -61,12 +61,23 @@ const Profile = () => {
           <Grid container>
             <Grid item xs={12} sm={4} style={{ margin: '25px' }}>
               <Paper square style={{ padding: '15px' }}>
-                <Typography
-                  variant="subtitle1"
-                  align="center"
-                  color="secondary"
-                >
+                <Typography variant="h6" align="center" color="primary">
                   ข้อมูลทั่วไป
+                </Typography>
+                <hr />
+              </Paper>
+            </Grid>
+            <Grid item xs={12} sm={6} style={{ margin: '25px' }}>
+              <Typography variant="h6" align="center" color="primary">
+                ผลงานที่ผ่านมา
+              </Typography>
+            </Grid>
+          </Grid>
+          <Grid container>
+            <Grid item xs={12} sm={4} style={{ margin: '25px' }}>
+              <Paper square style={{ padding: '15px' }}>
+                <Typography variant="h6" align="center" color="primary">
+                  การรับงาน
                 </Typography>
                 <hr />
               </Paper>
