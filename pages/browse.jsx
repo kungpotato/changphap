@@ -7,8 +7,8 @@ import Grid from '@material-ui/core/Grid'
 import Paper from '@material-ui/core/Paper'
 import Typography from '@material-ui/core/Typography'
 import { MuiThemeProvider } from '@material-ui/core/styles'
-import Header from '../components/Header'
 import theme from '../theme'
+import Header from '../components/Header'
 
 const override = css`
   display: block;
@@ -63,7 +63,7 @@ const Browse = () => {
         </div>
         <div id="root" style={{ display: !loading ? 'block' : 'none' }}>
           <Header />
-          <div className={classes.search} style={{ marginTop: '15px' }}>
+          <div className={classes.search}>
             <form noValidate autoComplete="off">
               <Grid container spacing={3} justify="center">
                 <Grid item xs={12} sm={4} style={{ marginRight: '20px' }}>

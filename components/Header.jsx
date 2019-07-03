@@ -59,6 +59,7 @@ const Header = ({ router }) => {
         position="static"
         color="default"
         className={router.pathname === '/' ? classes.appbar : classes.appbar2}
+        style={{ marginBottom: '15px' }}
       >
         <Toolbar>
           <Container maxWidth="lg">
