@@ -94,7 +94,11 @@ const Browse = () => {
           <Grid container>
             <Grid item xs={12} sm={4} style={{ margin: '25px' }}>
               <Paper square style={{ padding: '15px' }}>
-                <Typography variant="subtitle1" align="center">
+                <Typography
+                  variant="subtitle1"
+                  align="center"
+                  color="secondary"
+                >
                   หาช่างภาพตามภูมิภาค
                 </Typography>
                 <hr />

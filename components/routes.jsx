@@ -25,6 +25,7 @@ const useStyles = makeStyles({
 
 const routes = [
   { routeName: 'ค้นหาช่างภาพ', path: '/browse' },
+  { routeName: 'โปรไฟล์', path: '/profile' },
   { routeName: 'บทความ', path: '/content' },
   { routeName: 'สมัครช่างภาพ', path: null },
   { routeName: 'เข้าสู่ระบบ', path: null },
@@ -41,7 +42,7 @@ const Routes = ({ menuType, close, router }) => {
           <Button className={classes.menu}>
             <img
               src={
-                router.pathname === '/'
+                router.pathname === '/' || router.pathname === '/profile'
                   ? './static/images/logo1.png'
                   : './static/images/logo2.png'
               }
@@ -65,7 +66,10 @@ const Routes = ({ menuType, close, router }) => {
               >
                 <Button
                   style={{
-                    color: router.pathname === '/' ? '#fff' : '#404040',
+                    color:
+                      router.pathname === '/' || router.pathname === '/profile'
+                        ? '#fff'
+                        : '#404040',
                   }}
                   className={
                     menuType == 'main' ? classes.menu2 : classes.sideMenu

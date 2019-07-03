@@ -58,7 +58,11 @@ const Header = ({ router }) => {
       <AppBar
         position="static"
         color="default"
-        className={router.pathname === '/' ? classes.appbar : classes.appbar2}
+        className={
+          router.pathname === '/' || router.pathname === '/profile'
+            ? classes.appbar
+            : classes.appbar2
+        }
         style={{ marginBottom: '15px' }}
       >
         <Toolbar>
@@ -75,7 +79,9 @@ const Header = ({ router }) => {
                   <IconButton
                     onClick={handleClick}
                     className={
-                      router.pathname === '/' ? classes.menu : classes.menu2
+                      router.pathname === '/' || router.pathname === '/profile'
+                        ? classes.menu
+                        : classes.menu2
                     }
                   >
                     <i className="material-icons">menu</i>
