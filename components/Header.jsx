@@ -15,13 +15,11 @@ const useStyles = makeStyles({
     color: '#fff',
     fontWeight: 'normal',
     paddingRight: '10px',
-    fontFamily: 'Mitr',
   },
   menu2: {
     color: '#404040',
     fontWeight: 'normal',
     paddingRight: '10px',
-    fontFamily: 'Mitr',
   },
   appbar: {
     background: 'rgba(0,0,0,0.5)',

@@ -18,6 +18,8 @@ const override = css`
 const useStyle = makeStyles(theme => ({
   search: {
     background: '#48BFA3',
+    width: '100%',
+    height: 'auto',
   },
   field: {
     background: '#fff',
@@ -61,8 +63,8 @@ const Browse = () => {
         </div>
         <div id="root" style={{ display: !loading ? 'block' : 'none' }}>
           <Header />
-          <div className={classes.search}>
-            <form className={classes.container} noValidate autoComplete="off">
+          <div className={classes.search} style={{ marginTop: '15px' }}>
+            <form noValidate autoComplete="off">
               <Grid container spacing={3} justify="center">
                 <Grid item xs={12} sm={4} style={{ marginRight: '20px' }}>
                   <TextField
