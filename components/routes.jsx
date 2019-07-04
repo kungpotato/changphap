@@ -38,7 +38,7 @@ const Routes = ({ menuType, close, router }) => {
     <React.Fragment>
       {menuType === 'logo' ? (
         // ส่วนของ logo
-        <Link href="/">
+        <Link href='/'>
           <Button className={classes.menu}>
             <img
               src={
@@ -46,7 +46,7 @@ const Routes = ({ menuType, close, router }) => {
                   ? './static/images/logo1.png'
                   : './static/images/logo2.png'
               }
-              alt=""
+              alt=''
               style={{
                 width: '150px',
                 cursor: 'pointer',

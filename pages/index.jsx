@@ -1,9 +1,12 @@
 import React from 'react'
-import '../styles/styles.less'
-// import { getsUserFromGoogle, getsUserFromFacebook } from '../auth/authen'
 import Header from '../components/Header'
 import SearchBox from '../components/SearchBox'
+<<<<<<< HEAD
 import HomeSec2 from '../components/HomeSection2'
+=======
+import HomeSec2 from './HomeSection2'
+import '../styles/styles.less'
+>>>>>>> ef20e82d74bcc18aae5f903e7a3dd2d01cd5a1a5
 
 const Home = () => {
   return (
@@ -14,9 +17,5 @@ const Home = () => {
     </React.Fragment>
   )
 }
-
-// Home.getInitailProps = async () => {
-//   getsUser()
-// }
 
 export default Home
