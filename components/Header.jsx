@@ -56,19 +56,19 @@ const Header = ({ router }) => {
   return (
     <React.Fragment>
       <AppBar
-        position="static"
-        color="default"
+        position='static'
+        color='default'
         className={router.pathname === '/' ? classes.appbar : classes.appbar2}
-        style={{ position:'absolute' }}
+        style={{ position: 'absolute' }}
       >
         <Toolbar>
-          <Container maxWidth="lg">
+          <Container maxWidth='lg'>
             <Grid container>
-              <Routes menuType="logo" />
+              <Routes menuType='logo' />
 
               {isShow ? (
                 <div style={{ marginLeft: 'auto', paddingTop: '15px' }}>
-                  <Routes menuType="main" />
+                  <Routes menuType='main' />
                 </div>
               ) : (
                 <div style={{ marginLeft: 'auto' }}>
@@ -78,7 +78,7 @@ const Header = ({ router }) => {
                       router.pathname === '/' ? classes.menu : classes.menu2
                     }
                   >
-                    <i className="material-icons">menu</i>
+                    <i className='material-icons'>menu</i>
                   </IconButton>
                 </div>
               )}

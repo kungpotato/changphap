@@ -1,6 +1,6 @@
 module.exports = {
   extends: [
-    'airbnb',
+    // 'airbnb',
     'prettier',
     'eslint:recommended',
     'plugin:react/recommended',
@@ -28,7 +28,7 @@ module.exports = {
     'no-this-before-super': 'warn',
     'no-undef': 'warn',
     'no-unreachable': 'warn',
-    'no-unused-vars': 'warn',
+    "no-unused-vars": ["error", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }],
     'constructor-super': 'warn',
     'valid-typeof': 'warn',
     'react-hooks/rules-of-hooks': 'error',

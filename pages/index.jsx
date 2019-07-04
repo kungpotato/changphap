@@ -5,12 +5,11 @@ import HomeSec2 from './HomeSection2'
 import '../styles/styles.less'
 
 const Home = () => {
-
   return (
     <React.Fragment>
       <Header />
       <SearchBox />
-      <HomeSec2/>
+      <HomeSec2 />
     </React.Fragment>
   )
 }
