@@ -15,7 +15,7 @@ const Profile = () => {
     <MuiThemeProvider theme={theme}>
       <div>
         <Header />
-        <div className="root">
+        <div className='root'>
           <div
             style={{
               width: '100%',
@@ -27,18 +27,18 @@ const Profile = () => {
             }}
           >
             <img
-              src="./static/images/photo.jpg"
-              alt=""
+              src='./static/images/photo.jpg'
+              alt=''
               style={{
                 width: '100%',
                 position: 'relative',
               }}
             />
           </div>
-          <div className="im-profile">
+          <div className='im-profile'>
             <img
-              src="./static/images/dog.jpg"
-              alt=""
+              src='./static/images/dog.jpg'
+              alt=''
               style={{
                 width: '100%',
                 height: '100%',
@@ -51,8 +51,8 @@ const Profile = () => {
           </div>
           <div className={classes.profileName}>
             <Typography
-              variant="h4"
-              align="center"
+              variant='h4'
+              align='center'
               style={{ textShadow: '2px 2px 4px #000000', color: '#fff' }}
             >
               สมทวย คงควรคอย
@@ -61,14 +61,14 @@ const Profile = () => {
           <Grid container>
             <Grid item xs={12} sm={4} style={{ margin: '25px' }}>
               <Paper square style={{ padding: '15px' }}>
-                <Typography variant="h6" align="center" color="primary">
+                <Typography variant='h6' align='center' color='primary'>
                   ข้อมูลทั่วไป
                 </Typography>
                 <hr />
               </Paper>
             </Grid>
             <Grid item xs={12} sm={6} style={{ margin: '25px' }}>
-              <Typography variant="h6" align="center" color="primary">
+              <Typography variant='h6' align='center' color='primary'>
                 ผลงานที่ผ่านมา
               </Typography>
             </Grid>
@@ -76,7 +76,7 @@ const Profile = () => {
           <Grid container>
             <Grid item xs={12} sm={4} style={{ margin: '25px' }}>
               <Paper square style={{ padding: '15px' }}>
-                <Typography variant="h6" align="center" color="primary">
+                <Typography variant='h6' align='center' color='primary'>
                   การรับงาน
                 </Typography>
                 <hr />

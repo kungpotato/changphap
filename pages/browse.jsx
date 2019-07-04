@@ -2,13 +2,14 @@ import React, { useState, useEffect } from 'react'
 import '../styles/styles.less'
 import { css } from '@emotion/core'
 import { BounceLoader } from 'react-spinners'
-import { makeStyles, TextField } from '@material-ui/core'
+import { makeStyles } from '@material-ui/core'
 import Grid from '@material-ui/core/Grid'
 import Paper from '@material-ui/core/Paper'
 import Typography from '@material-ui/core/Typography'
 import { MuiThemeProvider } from '@material-ui/core/styles'
 import theme from '../theme'
 import Header from '../components/Header'
+import MainTextField from '../components/MainTextField'
 
 const override = css`
   display: block;
@@ -44,6 +45,7 @@ const Browse = () => {
 
   const handleChange = param => event => {
     setValues({ ...values, [param]: event.target.value })
+    console.log(event.target.value)
   }
 
   return (
@@ -66,25 +68,18 @@ const Browse = () => {
           <form noValidate autoComplete='off'>
             <Grid container spacing={3} justify='center'>
               <Grid item xs={12} sm={4} style={{ marginRight: '20px' }}>
-                <TextField
-                  id='outlined-name'
-                  className={classes.field}
+                <MainTextField
+                  width={300}
                   label='คุณต้องการถ่ายภาพงานอะไร'
-                  value={values.jobType}
-                  onChange={handleChange('jobType')}
-                  margin='normal'
-                  fullWidth
+                  handleChange={handleChange('jobType')}
                 />
               </Grid>
               <Grid item xs={12} sm={4} style={{ marginRight: '20px' }}>
-                <TextField
-                  id='place'
+                <MainTextField
+                  width={300}
                   className={classes.field}
                   label='คุณจะถ่ายภาพที่ไหน'
-                  value={values.place}
-                  onChange={handleChange('place')}
-                  margin='normal'
-                  fullWidth
+                  handleChange={handleChange('jobType')}
                 />
               </Grid>
             </Grid>
