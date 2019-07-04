@@ -1,4 +1,10 @@
 import React from 'react'
+<<<<<<< HEAD
+=======
+import Header from '../components/Header'
+import SearchBox from '../components/SearchBox'
+import HomeSec2 from './HomeSection2'
+>>>>>>> done section2
 import '../styles/styles.less'
 // import { getsUserFromGoogle, getsUserFromFacebook } from '../auth/authen'
 import Header from '../components/Header'
@@ -16,6 +22,7 @@ const Home = () => {
   return (
     <div>
       <Header />
+<<<<<<< HEAD
       <div className="root">
         <div
           style={{
@@ -38,6 +45,11 @@ const Home = () => {
         </div>
       </div>
     </div>
+=======
+      <SearchBox />
+      <HomeSec2/>
+    </React.Fragment>
+>>>>>>> done section2
   )
 }
 
