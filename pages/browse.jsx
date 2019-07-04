@@ -10,26 +10,29 @@ import { MuiThemeProvider } from '@material-ui/core/styles'
 import theme from '../theme'
 import Header from '../components/Header'
 import MainTextField from '../components/MainTextField'
+import useWindowSize from '../custom-hooks/useWindowSize'
 
 const override = css`
   display: block;
   margin: 0 auto;
 `
 
-const useStyle = makeStyles(theme => ({
+const useStyle = makeStyles(() => ({
   search: {
     background: '#48BFA3',
     width: '100%',
     height: 'auto',
   },
-  field: {
-    background: '#fff',
-    marginLeft: theme.spacing(1),
-    marginRight: theme.spacing(1),
+  searchLeft: {
+    float: 'right',
+  },
+  searchRight: {
+    float: 'left',
   },
 }))
 
 const Browse = () => {
+  const winSize = useWindowSize()
   const classes = useStyle()
   const [loading, setLoading] = useState(false) // เปลี่ยนเป็น true เมื่อเดฟเสร็จ
   const [values, setValues] = React.useState({
@@ -68,20 +71,25 @@ const Browse = () => {
           <div className={classes.search}>
             <form noValidate autoComplete='off'>
               <Grid container spacing={3} justify='center'>
-                <Grid item xs={12} sm={4} style={{ marginRight: '20px' }}>
-                  <MainTextField
-                    width={300}
-                    label='คุณต้องการถ่ายภาพงานอะไร'
-                    handleChange={handleChange('jobType')}
-                  />
+                <Grid item xs={12} sm={4}>
+                  <div
+                    className={winSize.width > 600 ? classes.searchLeft : ''}
+                  >
+                    <MainTextField
+                      label='คุณต้องการถ่ายภาพงานอะไร'
+                      handleChange={handleChange('jobType')}
+                    />
+                  </div>
                 </Grid>
-                <Grid item xs={12} sm={4} style={{ marginRight: '20px' }}>
-                  <MainTextField
-                    width={300}
-                    className={classes.field}
-                    label='คุณจะถ่ายภาพที่ไหน'
-                    handleChange={handleChange('jobType')}
-                  />
+                <Grid item xs={12} sm={4}>
+                  <div
+                    className={winSize.width > 600 ? classes.searchRight : ''}
+                  >
+                    <MainTextField
+                      label='คุณจะถ่ายภาพที่ไหน'
+                      handleChange={handleChange('jobType')}
+                    />
+                  </div>
                 </Grid>
               </Grid>
             </form>
