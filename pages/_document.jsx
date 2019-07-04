@@ -4,7 +4,6 @@ import flush from 'styled-jsx/server'
 import { ServerStyleSheet } from 'styled-components'
 import { ServerStyleSheets } from '@material-ui/styles'
 import theme from '../theme'
-import '../styles/styles.less'
 
 class MyDocument extends Document {
   static async getInitialProps(ctx) {

@@ -41,7 +41,7 @@ const Profile = () => {
             style={{ width: '100%' }}
           />
         </div>
-        <Container maxWidth='lg'>
+        <Container maxWidth='xl'>
           <div className='im-profile'>
             <Avatar
               alt=''
