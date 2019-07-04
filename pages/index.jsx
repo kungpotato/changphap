@@ -9,29 +9,6 @@ const Home = () => {
   return (
     <React.Fragment>
       <Header />
-
-      <div className='root'>
-        <div
-          style={{
-            width: '100%',
-            position: 'absolute',
-            top: '0',
-            zIndex: '-1',
-            height: '70%',
-            overflow: 'hidden',
-          }}
-        >
-          <img
-            src='./static/images/photography.jpg'
-            alt=''
-            style={{
-              width: '100%',
-              position: 'relative',
-            }}
-          />
-        </div>
-      </div>
-
       <SearchBox />
       <HomeSec2 />
     </React.Fragment>
