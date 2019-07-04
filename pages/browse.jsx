@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import '../styles/styles.less'
 import { css } from '@emotion/core'
 import { BounceLoader } from 'react-spinners'
-import { makeStyles } from '@material-ui/core'
+import { makeStyles, Container } from '@material-ui/core'
 import Grid from '@material-ui/core/Grid'
 import Paper from '@material-ui/core/Paper'
 import Typography from '@material-ui/core/Typography'
@@ -64,37 +64,43 @@ const Browse = () => {
       </div>
       <div style={{ display: !loading ? 'block' : 'none' }}>
         <Header />
-        <div className={classes.search}>
-          <form noValidate autoComplete='off'>
-            <Grid container spacing={3} justify='center'>
-              <Grid item xs={12} sm={4} style={{ marginRight: '20px' }}>
-                <MainTextField
-                  width={300}
-                  label='คุณต้องการถ่ายภาพงานอะไร'
-                  handleChange={handleChange('jobType')}
-                />
+        <Container maxWidth='lg'>
+          <div className={classes.search}>
+            <form noValidate autoComplete='off'>
+              <Grid container spacing={3} justify='center'>
+                <Grid item xs={12} sm={4} style={{ marginRight: '20px' }}>
+                  <MainTextField
+                    width={300}
+                    label='คุณต้องการถ่ายภาพงานอะไร'
+                    handleChange={handleChange('jobType')}
+                  />
+                </Grid>
+                <Grid item xs={12} sm={4} style={{ marginRight: '20px' }}>
+                  <MainTextField
+                    width={300}
+                    className={classes.field}
+                    label='คุณจะถ่ายภาพที่ไหน'
+                    handleChange={handleChange('jobType')}
+                  />
+                </Grid>
               </Grid>
-              <Grid item xs={12} sm={4} style={{ marginRight: '20px' }}>
-                <MainTextField
-                  width={300}
-                  className={classes.field}
-                  label='คุณจะถ่ายภาพที่ไหน'
-                  handleChange={handleChange('jobType')}
-                />
-              </Grid>
+            </form>
+          </div>
+          <Grid container>
+            <Grid item xs={12} sm={4} style={{ margin: '25px' }}>
+              <Paper square style={{ padding: '15px' }}>
+                <Typography
+                  variant='subtitle1'
+                  align='center'
+                  color='secondary'
+                >
+                  หาช่างภาพตามภูมิภาค
+                </Typography>
+                <hr />
+              </Paper>
             </Grid>
-          </form>
-        </div>
-        <Grid container>
-          <Grid item xs={12} sm={4} style={{ margin: '25px' }}>
-            <Paper square style={{ padding: '15px' }}>
-              <Typography variant='subtitle1' align='center' color='secondary'>
-                หาช่างภาพตามภูมิภาค
-              </Typography>
-              <hr />
-            </Paper>
           </Grid>
-        </Grid>
+        </Container>
       </div>
     </MuiThemeProvider>
   )
