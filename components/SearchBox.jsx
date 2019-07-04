@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { withRouter } from 'next/router'
 import styled from 'styled-components'
 import { TextField, Button, Grid, Typography } from '@material-ui/core'
@@ -38,8 +38,6 @@ const StyledTextField = styled(TextField)`
 `
 
 const SearchBox = () => {
-  useEffect(() => {}, [])
-
   const stylyBg = {
     backgroundImage: 'url("./static/images/photography.jpg")',
     width: '100%',
@@ -72,13 +70,13 @@ const SearchBox = () => {
       <div style={stylyBg}>
         <div style={TextFieldStyle}>
           <Typography
-            variant="h2"
+            variant='h2'
             style={{ color: '#fff', marginBottom: '20px', maxWidth: '540px' }}
           >
             เลือกและหาช่างภาพที่เหมาะกับงานของคุณ
           </Typography>
           <Typography
-            variant="h5"
+            variant='h5'
             style={{ color: '#fff', marginBottom: '20px', maxWidth: '540px' }}
           >
             บริการด้วยฝีมือดี เพิ่อเก็บภาพในวันสำคัญของคุณ
@@ -104,9 +102,9 @@ const SearchBox = () => {
                   paddingTop: '20px',
                   paddingBottom: '20px',
                 }}
-                label="ค้นหาช่างภาพใกล้คุณ"
-                id="deterministic-outlined-input"
-                variant="outlined"
+                label='ค้นหาช่างภาพใกล้คุณ'
+                id='deterministic-outlined-input'
+                variant='outlined'
               />
               <StyledTextField
                 style={{
@@ -115,9 +113,9 @@ const SearchBox = () => {
                   paddingTop: '20px',
                   paddingBottom: '20px',
                 }}
-                label="ค้นหาตามประเภทของงาน"
-                id="deterministic-outlined-input"
-                variant="outlined"
+                label='ค้นหาตามประเภทของงาน'
+                id='deterministic-outlined-input'
+                variant='outlined'
               />
             </Grid>
             <Grid
@@ -131,7 +129,7 @@ const SearchBox = () => {
                 height: '106px',
               }}
             >
-              <Button variant="contained" style={btnStyle}>
+              <Button variant='contained' style={btnStyle}>
                 ค้นหา
               </Button>
             </Grid>

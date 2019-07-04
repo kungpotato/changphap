@@ -4,9 +4,9 @@ import Header from '../components/Header'
 
 const Content = () => {
   return (
-    <React.Fragment>
+    <div>
       <Header />
-    </React.Fragment>
+    </div>
   )
 }
 export default Content
