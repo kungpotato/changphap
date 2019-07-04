@@ -1,16 +1,9 @@
-<<<<<<< HEAD
-import React, { useEffect } from 'react'
-=======
 import React from 'react'
->>>>>>> develope
 import { withRouter } from 'next/router'
 import styled from 'styled-components'
 import { TextField, Button, Grid, Typography } from '@material-ui/core'
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> develope
+
 const StyledTextField = styled(TextField)`
   .MuiOutlinedInput-root {
     fieldset {
@@ -32,19 +25,17 @@ const StyledTextField = styled(TextField)`
     color: #fff;
   }
   .MuiOutlinedInput-root fieldset {
-<<<<<<< HEAD
-=======
 const StyledTextField = styled(TextField)
     `
     .MuiOutlinedInput-root {
         fieldset {
-          border-color: #fff; 
+          border-color: #fff;
         }
         &:hover fieldset {
           border-color: #4EB8A0;
         }
         &.Mui-focused fieldset {
-          border-color: #fff; 
+          border-color: #fff;
         }
     }
   label.Mui-focused {
@@ -55,19 +46,14 @@ const StyledTextField = styled(TextField)
     color: #fff;
 }
 .MuiOutlinedInput-root fieldset {
->>>>>>> done banner
-=======
->>>>>>> develope
+
     border-color: #fff;
     border-top: 0;
     border-left: 0;
     border: -r;
     border-right: 0;
     border-radius: 0;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> develope
+
   }
   .MuiInputBase-input {
     color: #fff;
@@ -76,11 +62,6 @@ const StyledTextField = styled(TextField)
 `
 
 const SearchBox = () => {
-<<<<<<< HEAD
-  useEffect(() => {}, [])
-
-=======
->>>>>>> develope
   const stylyBg = {
     backgroundImage: 'url("./static/images/photography.jpg")',
     width: '100%',
@@ -181,8 +162,6 @@ const SearchBox = () => {
       </div>
     </React.Fragment>
   )
-<<<<<<< HEAD
-=======
 }
 .MuiInputBase-input {
     color: #fff;
@@ -238,9 +217,7 @@ const SearchBox = ({ router }) => {
             </div>
         </React.Fragment>
     )
->>>>>>> done banner
-=======
->>>>>>> develope
+
 }
 
 export default withRouter(SearchBox)
