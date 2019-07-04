@@ -38,11 +38,6 @@ const StyledTextField = styled(TextField)`
 `
 
 const SearchBox = () => {
-<<<<<<< HEAD
-=======
-  useEffect(() => {}, [])
-
->>>>>>> fix
   const stylyBg = {
     backgroundImage: 'url("./static/images/photography.jpg")',
     width: '100%',
@@ -75,21 +70,13 @@ const SearchBox = () => {
       <div style={stylyBg}>
         <div style={TextFieldStyle}>
           <Typography
-<<<<<<< HEAD
             variant='h2'
-=======
-            variant="h2"
->>>>>>> fix
             style={{ color: '#fff', marginBottom: '20px', maxWidth: '540px' }}
           >
             เลือกและหาช่างภาพที่เหมาะกับงานของคุณ
           </Typography>
           <Typography
-<<<<<<< HEAD
             variant='h5'
-=======
-            variant="h5"
->>>>>>> fix
             style={{ color: '#fff', marginBottom: '20px', maxWidth: '540px' }}
           >
             บริการด้วยฝีมือดี เพิ่อเก็บภาพในวันสำคัญของคุณ
@@ -115,15 +102,9 @@ const SearchBox = () => {
                   paddingTop: '20px',
                   paddingBottom: '20px',
                 }}
-<<<<<<< HEAD
                 label='ค้นหาช่างภาพใกล้คุณ'
                 id='deterministic-outlined-input'
                 variant='outlined'
-=======
-                label="ค้นหาช่างภาพใกล้คุณ"
-                id="deterministic-outlined-input"
-                variant="outlined"
->>>>>>> fix
               />
               <StyledTextField
                 style={{
@@ -132,15 +113,9 @@ const SearchBox = () => {
                   paddingTop: '20px',
                   paddingBottom: '20px',
                 }}
-<<<<<<< HEAD
                 label='ค้นหาตามประเภทของงาน'
                 id='deterministic-outlined-input'
                 variant='outlined'
-=======
-                label="ค้นหาตามประเภทของงาน"
-                id="deterministic-outlined-input"
-                variant="outlined"
->>>>>>> fix
               />
             </Grid>
             <Grid
@@ -154,11 +129,7 @@ const SearchBox = () => {
                 height: '106px',
               }}
             >
-<<<<<<< HEAD
               <Button variant='contained' style={btnStyle}>
-=======
-              <Button variant="contained" style={btnStyle}>
->>>>>>> fix
                 ค้นหา
               </Button>
             </Grid>
