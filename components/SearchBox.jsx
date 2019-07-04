@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { withRouter } from 'next/router'
 import styled from 'styled-components'
 import { TextField, Button, Grid, Typography } from '@material-ui/core'
@@ -38,8 +38,6 @@ const StyledTextField = styled(TextField)`
 `
 
 const SearchBox = () => {
-  useEffect(() => {}, [])
-
   const stylyBg = {
     backgroundImage: 'url("./static/images/photography.jpg")',
     width: '100%',
