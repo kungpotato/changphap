@@ -61,22 +61,12 @@ const Profile = () => {
           <Grid container>
             <Grid item xs={12} sm={4} style={{ margin: '25px' }}>
               <Paper square style={{ padding: '15px' }}>
-<<<<<<< HEAD
-                <Typography
-                  variant="subtitle1"
-                  align="center"
-                  color="secondary"
-                >
-=======
                 <Typography variant='h6' align='center' color='primary'>
->>>>>>> add textfield style
                   ข้อมูลทั่วไป
                 </Typography>
                 <hr />
               </Paper>
             </Grid>
-<<<<<<< HEAD
-=======
             <Grid item xs={12} sm={6} style={{ margin: '25px' }}>
               <Typography variant='h6' align='center' color='primary'>
                 ผลงานที่ผ่านมา
@@ -92,7 +82,6 @@ const Profile = () => {
                 <hr />
               </Paper>
             </Grid>
->>>>>>> add textfield style
           </Grid>
         </div>
       </div>
