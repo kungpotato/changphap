@@ -49,41 +49,41 @@ const Browse = () => {
   return (
     <MuiThemeProvider theme={theme}>
       <div
-        className="sweet-loading"
+        className='sweet-loading'
         style={{ paddingTop: '200px', display: loading ? 'block' : 'none' }}
       >
         <BounceLoader
           css={override}
-          sizeUnit="px"
+          sizeUnit='px'
           size={150}
-          color="#48BFA3"
+          color='#48BFA3'
           loading={loading}
         />
       </div>
       <div style={{ display: !loading ? 'block' : 'none' }}>
         <Header />
         <div className={classes.search}>
-          <form noValidate autoComplete="off">
-            <Grid container spacing={3} justify="center">
+          <form noValidate autoComplete='off'>
+            <Grid container spacing={3} justify='center'>
               <Grid item xs={12} sm={4} style={{ marginRight: '20px' }}>
                 <TextField
-                  id="outlined-name"
+                  id='outlined-name'
                   className={classes.field}
-                  label="คุณต้องการถ่ายภาพงานอะไร"
+                  label='คุณต้องการถ่ายภาพงานอะไร'
                   value={values.jobType}
                   onChange={handleChange('jobType')}
-                  margin="normal"
+                  margin='normal'
                   fullWidth
                 />
               </Grid>
               <Grid item xs={12} sm={4} style={{ marginRight: '20px' }}>
                 <TextField
-                  id="place"
+                  id='place'
                   className={classes.field}
-                  label="คุณจะถ่ายภาพที่ไหน"
+                  label='คุณจะถ่ายภาพที่ไหน'
                   value={values.place}
                   onChange={handleChange('place')}
-                  margin="normal"
+                  margin='normal'
                   fullWidth
                 />
               </Grid>
@@ -93,7 +93,7 @@ const Browse = () => {
         <Grid container>
           <Grid item xs={12} sm={4} style={{ margin: '25px' }}>
             <Paper square style={{ padding: '15px' }}>
-              <Typography variant="subtitle1" align="center" color="secondary">
+              <Typography variant='subtitle1' align='center' color='secondary'>
                 หาช่างภาพตามภูมิภาค
               </Typography>
               <hr />
