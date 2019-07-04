@@ -56,7 +56,7 @@ const Header = ({ router }) => {
   return (
     <React.Fragment>
       <AppBar
-        position='static'
+        position='absolute'
         color='default'
         className={
           router.pathname === '/' || router.pathname === '/profile'
