@@ -8,7 +8,7 @@ const theme = createMuiTheme({
       main: '#48BFA3',
     },
     secondary: {
-      main: '#19857b',
+      main: '#404040',
     },
     error: {
       main: red.A400,
@@ -19,7 +19,6 @@ const theme = createMuiTheme({
   },
   typography: {
     fontFamily: ['"Mitr"', 'sans-serif'].join(','),
-    color: '#404040',
   },
 })
 
