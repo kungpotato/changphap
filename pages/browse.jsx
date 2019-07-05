@@ -10,7 +10,7 @@ import { MuiThemeProvider } from '@material-ui/core/styles'
 import theme from '../theme'
 import Header from '../components/Header'
 import MainTextField from '../components/MainTextField'
-import useWindowSize from '../custom-hooks/useWindowSize'
+import _JSXStyle from 'styled-jsx/style' //eslint-disable-line
 
 const override = css`
   display: block;
@@ -32,7 +32,6 @@ const useStyle = makeStyles(() => ({
 }))
 
 const Browse = () => {
-  const winSize = useWindowSize()
   const classes = useStyle()
   const [loading, setLoading] = useState(false) // เปลี่ยนเป็น true เมื่อเดฟเสร็จ
   const [values, setValues] = React.useState({
@@ -72,9 +71,7 @@ const Browse = () => {
             <form noValidate autoComplete='off'>
               <Grid container spacing={3} justify='center'>
                 <Grid item xs={12} sm={4}>
-                  <div
-                    className={winSize.width > 600 ? classes.searchLeft : ''}
-                  >
+                  <div className='searchLeft'>
                     <MainTextField
                       label='คุณต้องการถ่ายภาพงานอะไร'
                       handleChange={handleChange('jobType')}
@@ -82,9 +79,7 @@ const Browse = () => {
                   </div>
                 </Grid>
                 <Grid item xs={12} sm={4}>
-                  <div
-                    className={winSize.width > 600 ? classes.searchRight : ''}
-                  >
+                  <div className='searchRight'>
                     <MainTextField
                       label='คุณจะถ่ายภาพที่ไหน'
                       handleChange={handleChange('jobType')}
@@ -110,6 +105,24 @@ const Browse = () => {
           </Grid>
         </Container>
       </div>
+      <style jsx>
+        {`
+          .searchLeft {
+            float: right;
+          }
+          .searchRight {
+            float: left;
+          }
+          @media screen and (max-width: 660px) {
+            .searchLeft {
+              float: inherit;
+            }
+            .searchRight {
+              float: inherit;
+            }
+          }
+        `}
+      </style>
     </MuiThemeProvider>
   )
 }
