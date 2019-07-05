@@ -31,7 +31,7 @@ const useStyle = makeStyles(() => ({
   },
 }))
 
-const Browse = () => {
+const Browse = ({ pathname }) => {
   const classes = useStyle()
   const [loading, setLoading] = useState(false) // เปลี่ยนเป็น true เมื่อเดฟเสร็จ
   const [values, setValues] = React.useState({
@@ -40,10 +40,12 @@ const Browse = () => {
   })
 
   useEffect(() => {
+    console.log(pathname)
+
     window.onload = () => {
       setLoading(false)
     }
-  }, [])
+  }, [pathname])
 
   const handleChange = param => event => {
     setValues({ ...values, [param]: event.target.value })
@@ -125,6 +127,10 @@ const Browse = () => {
       </style>
     </MuiThemeProvider>
   )
+}
+
+Browse.getInitialProps = async ({ pathname }) => {
+  return { pathname }
 }
 
 export default Browse
