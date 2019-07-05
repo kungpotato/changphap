@@ -22,12 +22,14 @@ const useStyle = makeStyles(() => ({
     background: '#48BFA3',
     width: '100%',
     height: 'auto',
+    padding: '15px',
   },
   searchLeft: {
     float: 'right',
   },
   searchRight: {
     float: 'left',
+    textAlign: 'center',
   },
 }))
 
@@ -69,11 +71,11 @@ const Browse = ({ pathname, slug }) => {
       </div>
       <div style={{ display: !loading ? 'block' : 'none' }}>
         <Header />
-        <Container maxWidth='xl' style={{ marginTop: '100px' }}>
+        <Container maxWidth='xl' style={{ marginTop: '80px' }}>
           <div className={classes.search}>
             <form noValidate autoComplete='off'>
               <Grid container spacing={3} justify='center'>
-                <Grid item xs={12} sm={4}>
+                <Grid item xs={12} sm={4} style={{ textAlign: 'center' }}>
                   <div className='searchLeft'>
                     <MainTextField
                       label='คุณต้องการถ่ายภาพงานอะไร'
@@ -81,7 +83,7 @@ const Browse = ({ pathname, slug }) => {
                     />
                   </div>
                 </Grid>
-                <Grid item xs={12} sm={4}>
+                <Grid item xs={12} sm={4} style={{ textAlign: 'center' }}>
                   <div className='searchRight'>
                     <MainTextField
                       label='คุณจะถ่ายภาพที่ไหน'

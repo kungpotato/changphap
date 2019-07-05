@@ -3,12 +3,26 @@ import '../styles/styles.less'
 import { MuiThemeProvider } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
 import { makeStyles } from '@material-ui/styles'
-import { Grid, Paper, Container } from '@material-ui/core'
+import {
+  Grid,
+  Paper,
+  Container,
+  GridList,
+  GridListTile,
+  GridListTileBar,
+} from '@material-ui/core'
 import Header from '../components/Header'
 import Avatar from '@material-ui/core/Avatar'
 import theme from '../theme'
+import useWindowSize from '../custom-hooks/useWindowSize'
 
 const useStyle = makeStyles(() => ({
+  gridList: {
+    width: '100%',
+  },
+  icon: {
+    color: 'rgba(255, 255, 255, 0.54)',
+  },
   avt: {
     width: '100%',
     height: '100%',
@@ -21,6 +35,7 @@ const useStyle = makeStyles(() => ({
 
 const Profile = () => {
   const classes = useStyle()
+  let winSize = useWindowSize()
   return (
     <MuiThemeProvider theme={theme}>
       <Header />
@@ -28,7 +43,7 @@ const Profile = () => {
         <div
           style={{
             width: '100%',
-            height: '40%',
+            height: '50%',
             position: 'absolute',
             top: '0',
             zIndex: '-1',
@@ -52,31 +67,79 @@ const Profile = () => {
           <Typography
             variant='h4'
             align='center'
-            style={{ textShadow: '2px 2px 4px #000000', color: '#fff' }}
+            style={{
+              textShadow: '2px 2px 4px #000000',
+              color: '#fff',
+              marginBottom: '30px',
+            }}
           >
             สมทวย คงควรคอย
           </Typography>
-          <Grid container style={{ background: '#fff' }}>
-            <Grid item xs={12} sm={4} style={{ margin: '25px' }}>
-              <Paper square style={{ padding: '15px' }}>
+          <Grid container style={{ background: '#fff' }} justify='center'>
+            <Grid item xs={12} sm={4} style={{ padding: '15px' }}>
+              <Paper square style={{ padding: '15px', marginBottom: '30px' }}>
                 <Typography variant='h6' align='center' color='primary'>
                   ข้อมูลทั่วไป
                 </Typography>
                 <hr />
               </Paper>
-            </Grid>
-            <Grid item xs={12} sm={6} style={{ margin: '25px' }}>
-              <Typography variant='h6' align='center' color='primary'>
-                ผลงานที่ผ่านมา
-              </Typography>
-            </Grid>
-            <Grid item xs={12} sm={4} style={{ margin: '25px' }}>
               <Paper square style={{ padding: '15px' }}>
                 <Typography variant='h6' align='center' color='primary'>
                   การรับงาน
                 </Typography>
                 <hr />
               </Paper>
+            </Grid>
+            <Grid item xs={12} sm={8} style={{ padding: '15px' }}>
+              <Typography variant='h6' align='center' color='primary'>
+                ผลงานที่ผ่านมา
+              </Typography>
+              <hr />
+              <div>
+                <GridList
+                  className={classes.gridList}
+                  cols={winSize.width > 950 ? 3 : 2}
+                >
+                  <GridListTile>
+                    <img alt='' src='./static/images/dog.jpg' />
+                    <GridListTileBar
+                      title='wegweger'
+                      subtitle={<span>by: egergergerg</span>}
+                    ></GridListTileBar>
+                  </GridListTile>
+                  <GridListTile>
+                    <img alt='' src='./static/images/dog.jpg' />
+                    <GridListTileBar
+                      title='wegweger'
+                      subtitle={<span>by: egergergerg</span>}
+                    ></GridListTileBar>
+                  </GridListTile>
+                  <GridListTile>
+                    <img alt='' src='./static/images/dog.jpg' />
+                    <GridListTileBar
+                      title='wegweger'
+                      subtitle={<span>by: egergergerg</span>}
+                    ></GridListTileBar>
+                  </GridListTile>
+                </GridList>
+              </div>
+              {/* <Grid container spacing={2}>
+                <Grid item xs={6} sm={3}>
+                  <img alt='' src='./static/images/dog.jpg' width='100%' />
+                </Grid>
+                <Grid item xs={6} sm={3}>
+                  <img alt='' src='./static/images/dog.jpg' width='100%' />
+                </Grid>
+                <Grid item xs={6} sm={3}>
+                  <img alt='' src='./static/images/dog.jpg' width='100%' />
+                </Grid>
+                <Grid item xs={6} sm={3}>
+                  <img alt='' src='./static/images/dog.jpg' width='100%' />
+                </Grid>
+                <Grid item xs={6} sm={3}>
+                  <div></div>
+                </Grid>
+              </Grid> */}
             </Grid>
           </Grid>
         </Container>
