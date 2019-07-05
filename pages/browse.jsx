@@ -31,7 +31,7 @@ const useStyle = makeStyles(() => ({
   },
 }))
 
-const Browse = ({ pathname }) => {
+const Browse = ({ pathname, slug }) => {
   const classes = useStyle()
   const [loading, setLoading] = useState(false) // เปลี่ยนเป็น true เมื่อเดฟเสร็จ
   const [values, setValues] = React.useState({
@@ -41,11 +41,12 @@ const Browse = ({ pathname }) => {
 
   useEffect(() => {
     console.log(pathname)
+    console.log(slug)
 
     window.onload = () => {
       setLoading(false)
     }
-  }, [pathname])
+  }, [pathname, slug])
 
   const handleChange = param => event => {
     setValues({ ...values, [param]: event.target.value })
@@ -129,8 +130,9 @@ const Browse = ({ pathname }) => {
   )
 }
 
-Browse.getInitialProps = async ({ pathname }) => {
-  return { pathname }
+Browse.getInitialProps = async ({ pathname, query }) => {
+  const slug = query.slug
+  return { pathname, slug }
 }
 
 export default Browse

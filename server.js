@@ -1,7 +1,3 @@
-//npm install -g win-node-env
-
-// const { createServer } = require('http')
-// const { parse } = require('url')
 const next = require('next')
 const express = require('express')
 const dev = process.env.NODE_ENV !== 'production'
@@ -15,6 +11,9 @@ app
 
     server.get('*', (req, res) => {
       return handle(req, res)
+    })
+    server.get('/browse/:slug', (req, res) => {
+      return app.render(req, res, '/post', { slug: req.params.slug })
     })
 
     server.listen(3000, err => {
