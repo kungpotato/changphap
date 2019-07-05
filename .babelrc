@@ -3,6 +3,7 @@
   "plugins": [
     "emotion",
     ["styled-components", { "ssr": true }],
+    "styled-jsx/babel",
     "@babel/plugin-transform-flow-strip-types",
     "@babel/plugin-transform-react-jsx-source",
     "@babel/plugin-transform-react-jsx-self",
