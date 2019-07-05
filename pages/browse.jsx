@@ -69,7 +69,7 @@ const Browse = ({ pathname, slug }) => {
       </div>
       <div style={{ display: !loading ? 'block' : 'none' }}>
         <Header />
-        <Container maxWidth='xl'>
+        <Container maxWidth='xl' style={{ marginTop: '100px' }}>
           <div className={classes.search}>
             <form noValidate autoComplete='off'>
               <Grid container spacing={3} justify='center'>
