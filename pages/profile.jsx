@@ -12,7 +12,7 @@ import {
 } from '@material-ui/core'
 import Header from '../components/Header'
 import Avatar from '@material-ui/core/Avatar'
-// import useWindowSize from '../custom-hooks/useWindowSize'
+//import useWindowSize from '../custom-hooks/useWindowSize'
 
 const useStyle = makeStyles(theme => {
   //console.log(theme.palette.background)
@@ -39,7 +39,7 @@ const useStyle = makeStyles(theme => {
 
 const Profile = () => {
   const classes = useStyle()
-  // let winSize = useWindowSize()
+  //let winSize = useWindowSize()
   return (
     <div>
       <Header />

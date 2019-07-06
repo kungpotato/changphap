@@ -5,7 +5,7 @@ const app = next({ dev })
 const handle = app.getRequestHandler()
 
 // import React from 'react'
-// import ReactDOMServer from 'react-dom/server'
+// import { renderToString } from 'react-dom/server'
 // import { ServerStyleSheets, ThemeProvider } from '@material-ui/styles'
 // import App from 'next/app'
 // import theme from './theme'
@@ -27,7 +27,7 @@ const handle = app.getRequestHandler()
 
 // function handleRender(req, res) {
 //   const sheets = new ServerStyleSheets()
-//   const html = ReactDOMServer.renderToString(
+//   const html = renderToString(
 //     sheets.collect(
 //       <ThemeProvider theme={theme}>
 //         <App />
