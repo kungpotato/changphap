@@ -50,9 +50,9 @@
   },
   "scripts": {
     "test": "test",
-    "dev": "node server.js",
+    "dev": "nodemon server.js",
     "build": "next build",
-    "start": "SET NODE_ENV=production && node server.js"
+    "start": "SET NODE_ENV=production && nodemon server.js"
   },
   "author": "kungpotato",
   "license": "ISC"
