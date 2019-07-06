@@ -53,7 +53,7 @@
     "test": "test",
     "dev": "nodemon -r esm server.js",
     "build": "next build",
-    "start": "SET NODE_ENV=production && nodemon -r esm server.js"
+    "start": "NODE_ENV=production nodemon -r esm server.js"
   },
   "author": "kungpotato",
   "license": "ISC"

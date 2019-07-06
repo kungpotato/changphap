@@ -29,7 +29,7 @@ const useStyles = makeStyles({
   },
 })
 
-const Header = ({ router }) => {
+const Header = ({ pathname }) => {
   const [isShow, setIsShow] = useState(true)
   const [anchorEl, setAnchorEl] = useState(null)
   let windowSize = useWindowSize()
@@ -59,7 +59,7 @@ const Header = ({ router }) => {
         position='absolute'
         color='default'
         className={
-          router.pathname === '/' || router.pathname === '/profile'
+          pathname === '/' || pathname === '/profile'
             ? classes.appbar
             : classes.appbar2
         }
@@ -79,7 +79,7 @@ const Header = ({ router }) => {
                   <IconButton
                     onClick={handleClick}
                     className={
-                      router.pathname === '/' || router.pathname === '/profile'
+                      pathname === '/' || pathname === '/profile'
                         ? classes.menu
                         : classes.menu2
                     }
@@ -104,4 +104,8 @@ const Header = ({ router }) => {
   )
 }
 
-export default withRouter(Header)
+Header.getInitialProps = async ({ pathname }) => {
+  return { pathname }
+}
+
+export default Header
