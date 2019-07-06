@@ -6,8 +6,6 @@ import { makeStyles, Container } from '@material-ui/core'
 import Grid from '@material-ui/core/Grid'
 import Paper from '@material-ui/core/Paper'
 import Typography from '@material-ui/core/Typography'
-import { MuiThemeProvider } from '@material-ui/core/styles'
-import theme from '../theme'
 import Header from '../components/Header'
 import MainTextField from '../components/MainTextField'
 import _JSXStyle from 'styled-jsx/style' //eslint-disable-line
@@ -56,7 +54,7 @@ const Browse = ({ pathname, slug }) => {
   }
 
   return (
-    <MuiThemeProvider theme={theme}>
+    <div>
       <div
         className='sweet-loading'
         style={{ paddingTop: '200px', display: loading ? 'block' : 'none' }}
@@ -128,7 +126,7 @@ const Browse = ({ pathname, slug }) => {
           }
         `}
       </style>
-    </MuiThemeProvider>
+    </div>
   )
 }
 

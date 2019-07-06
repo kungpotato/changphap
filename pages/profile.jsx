@@ -1,6 +1,5 @@
 import React from 'react'
 import '../styles/styles.less'
-import { MuiThemeProvider } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
 import { makeStyles } from '@material-ui/styles'
 import {
@@ -13,7 +12,6 @@ import {
 } from '@material-ui/core'
 import Header from '../components/Header'
 import Avatar from '@material-ui/core/Avatar'
-import theme from '../theme'
 import useWindowSize from '../custom-hooks/useWindowSize'
 
 const useStyle = makeStyles(() => ({
@@ -37,7 +35,7 @@ const Profile = () => {
   const classes = useStyle()
   let winSize = useWindowSize()
   return (
-    <MuiThemeProvider theme={theme}>
+    <div>
       <Header />
       <div className='root'>
         <div
@@ -123,28 +121,11 @@ const Profile = () => {
                   </GridListTile>
                 </GridList>
               </div>
-              {/* <Grid container spacing={2}>
-                <Grid item xs={6} sm={3}>
-                  <img alt='' src='./static/images/dog.jpg' width='100%' />
-                </Grid>
-                <Grid item xs={6} sm={3}>
-                  <img alt='' src='./static/images/dog.jpg' width='100%' />
-                </Grid>
-                <Grid item xs={6} sm={3}>
-                  <img alt='' src='./static/images/dog.jpg' width='100%' />
-                </Grid>
-                <Grid item xs={6} sm={3}>
-                  <img alt='' src='./static/images/dog.jpg' width='100%' />
-                </Grid>
-                <Grid item xs={6} sm={3}>
-                  <div></div>
-                </Grid>
-              </Grid> */}
             </Grid>
           </Grid>
         </Container>
       </div>
-    </MuiThemeProvider>
+    </div>
   )
 }
 
