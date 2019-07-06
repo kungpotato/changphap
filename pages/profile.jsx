@@ -12,10 +12,10 @@ import {
 } from '@material-ui/core'
 import Header from '../components/Header'
 import Avatar from '@material-ui/core/Avatar'
-import useWindowSize from '../custom-hooks/useWindowSize'
+// import useWindowSize from '../custom-hooks/useWindowSize'
 
 const useStyle = makeStyles(theme => {
-  console.log(theme.palette.background)
+  //console.log(theme.palette.background)
   return {
     test: {
       padding: theme.palette.background,
@@ -39,7 +39,7 @@ const useStyle = makeStyles(theme => {
 
 const Profile = () => {
   const classes = useStyle()
-  let winSize = useWindowSize()
+  // let winSize = useWindowSize()
   return (
     <div>
       <Header />
@@ -100,10 +100,7 @@ const Profile = () => {
               </Typography>
               <hr />
               <div>
-                <GridList
-                  className={classes.gridList}
-                  cols={winSize.width > 950 ? 3 : 2}
-                >
+                <GridList className={classes.gridList} cols={3}>
                   <GridListTile>
                     <img alt='' src='./static/images/dog.jpg' />
                     <GridListTileBar
