@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link, Button, makeStyles, MenuItem } from '@material-ui/core'
+import { withRouter } from 'next/router'
 
 const useStyles = makeStyles({
   menu: {
@@ -30,7 +31,7 @@ const routes = [
   { routeName: 'เข้าสู่ระบบ', path: null },
 ]
 
-const Routes = ({ menuType, close, pathname }) => {
+const Routes = ({ menuType, close, router }) => {
   const classes = useStyles()
 
   return (
@@ -41,7 +42,7 @@ const Routes = ({ menuType, close, pathname }) => {
           <Button className={classes.menu}>
             <img
               src={
-                pathname === '/' || pathname === '/profile'
+                router.pathname === '/' || router.pathname === '/profile'
                   ? './static/images/logo1.png'
                   : './static/images/logo2.png'
               }
@@ -66,7 +67,7 @@ const Routes = ({ menuType, close, pathname }) => {
                 <Button
                   style={{
                     color:
-                      pathname === '/' || pathname === '/profile'
+                      router.pathname === '/' || router.pathname === '/profile'
                         ? '#fff'
                         : '#404040',
                   }}
@@ -98,4 +99,4 @@ const Routes = ({ menuType, close, pathname }) => {
   )
 }
 
-export default Routes
+export default withRouter(Routes)

@@ -7,6 +7,7 @@ import Menu from '@material-ui/core/Menu'
 import { makeStyles } from '@material-ui/styles'
 import { Container, Grid } from '@material-ui/core'
 import useWindowSize from '../custom-hooks/useWindowSize'
+import { withRouter } from 'next/router'
 import Routes from './routes'
 
 const useStyles = makeStyles({
@@ -28,7 +29,7 @@ const useStyles = makeStyles({
   },
 })
 
-const Header = ({ pathname }) => {
+const Header = ({ router }) => {
   const [isShow, setIsShow] = useState(true)
   const [anchorEl, setAnchorEl] = useState(null)
   let windowSize = useWindowSize()
@@ -54,12 +55,11 @@ const Header = ({ pathname }) => {
 
   return (
     <React.Fragment>
-      {console.log(pathname)}
       <AppBar
         position='absolute'
         color='default'
         className={
-          pathname === '/' || pathname === '/profile'
+          router.pathname === '/' || router.pathname === '/profile'
             ? classes.appbar
             : classes.appbar2
         }
@@ -68,7 +68,7 @@ const Header = ({ pathname }) => {
         <Toolbar>
           <Container maxWidth='lg'>
             <Grid container>
-              <Routes menuType='logo' pathname={pathname} />
+              <Routes menuType='logo' />
 
               {isShow ? (
                 <div style={{ marginLeft: 'auto', paddingTop: '15px' }}>
@@ -79,7 +79,7 @@ const Header = ({ pathname }) => {
                   <IconButton
                     onClick={handleClick}
                     className={
-                      pathname === '/' || pathname === '/profile'
+                      router.pathname === '/' || router.pathname === '/profile'
                         ? classes.menu
                         : classes.menu2
                     }
@@ -98,10 +98,10 @@ const Header = ({ pathname }) => {
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        {/* <Routes close={handleClose} pathname={pathname} /> */}
+        <Routes close={handleClose} />
       </Menu>
     </React.Fragment>
   )
 }
 
-export default Header
+export default withRouter(Header)

@@ -37,12 +37,12 @@ const useStyle = makeStyles(theme => {
   }
 })
 
-const Profile = ({ pathname }) => {
+const Profile = () => {
   const classes = useStyle()
   //let winSize = useWindowSize()
   return (
     <div>
-      <Header pathname={pathname} />
+      <Header />
       <div className='root'>
         <div
           style={{
