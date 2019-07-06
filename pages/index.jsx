@@ -15,8 +15,4 @@ const Home = () => {
   )
 }
 
-// Home.getInitailProps = async () => {
-//   getsUser()
-// }
-
 export default Home
