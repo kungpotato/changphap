@@ -10,6 +10,7 @@
     "@material-ui/styles": "4.1.2",
     "@zeit/next-less": "^1.0.1",
     "dotenv": "8.0.0",
+    "esm": "^3.2.25",
     "express": "^4.17.1",
     "firebase": "6.2.3",
     "firebase-admin": "8.2.0",
@@ -50,9 +51,9 @@
   },
   "scripts": {
     "test": "test",
-    "dev": "nodemon server.js",
+    "dev": "nodemon -r esm server.js",
     "build": "next build",
-    "start": "SET NODE_ENV=production && nodemon server.js"
+    "start": "SET NODE_ENV=production && nodemon -r esm server.js"
   },
   "author": "kungpotato",
   "license": "ISC"
