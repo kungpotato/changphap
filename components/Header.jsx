@@ -5,9 +5,9 @@ import Toolbar from '@material-ui/core/Toolbar'
 import IconButton from '@material-ui/core/IconButton'
 import Menu from '@material-ui/core/Menu'
 import { makeStyles } from '@material-ui/styles'
-import { withRouter } from 'next/router'
 import { Container, Grid } from '@material-ui/core'
 import useWindowSize from '../custom-hooks/useWindowSize'
+import { withRouter } from 'next/router'
 import Routes from './routes'
 
 const useStyles = makeStyles({
@@ -56,7 +56,7 @@ const Header = ({ router }) => {
   return (
     <React.Fragment>
       <AppBar
-        position='static'
+        position='absolute'
         color='default'
         className={
           router.pathname === '/' || router.pathname === '/profile'

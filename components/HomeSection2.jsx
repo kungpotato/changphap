@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { withRouter } from 'next/router'
-import Howto from '../components/Howto'
-import LastProfile from '../components/LastProfile'
+import Howto from './Howto'
+import LastProfile from './LastProfile'
 
 const HomeSec2 = () => {
   useEffect(() => {}, [])

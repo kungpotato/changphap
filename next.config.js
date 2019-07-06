@@ -3,6 +3,7 @@ const withLess = require('@zeit/next-less')
 require('dotenv').config()
 
 module.exports = withLess({
+  //target: 'serverless',
   webpack: (config, { dev }) => {
     const env = Object.keys(process.env).reduce((acc, curr) => {
       acc[`process.env.${curr}`] = JSON.stringify(process.env[curr])

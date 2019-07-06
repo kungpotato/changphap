@@ -35,10 +35,10 @@ const Routes = ({ menuType, close, router }) => {
   const classes = useStyles()
 
   return (
-    <React.Fragment>
+    <div className='routes'>
       {menuType === 'logo' ? (
         // ส่วนของ logo
-        <Link href="/">
+        <Link href='/'>
           <Button className={classes.menu}>
             <img
               src={
@@ -46,7 +46,7 @@ const Routes = ({ menuType, close, router }) => {
                   ? './static/images/logo1.png'
                   : './static/images/logo2.png'
               }
-              alt=""
+              alt=''
               style={{
                 width: '150px',
                 cursor: 'pointer',
@@ -56,7 +56,7 @@ const Routes = ({ menuType, close, router }) => {
           </Button>
         </Link>
       ) : (
-        <React.Fragment>
+        <div>
           {routes.map(item =>
             // ส่วนของ main menu
             menuType == 'main' ? (
@@ -93,9 +93,9 @@ const Routes = ({ menuType, close, router }) => {
               </MenuItem>
             )
           )}
-        </React.Fragment>
+        </div>
       )}
-    </React.Fragment>
+    </div>
   )
 }
 
