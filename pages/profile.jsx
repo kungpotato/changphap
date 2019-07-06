@@ -43,7 +43,7 @@ const Profile = () => {
         <div
           style={{
             width: '100%',
-            height: '50%',
+            height: '45%',
             position: 'absolute',
             top: '0',
             zIndex: '-1',
