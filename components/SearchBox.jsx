@@ -44,6 +44,8 @@ const SearchBox = () => {
     height: '100vh',
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
+    backgroundSize: 'contain',
+    backgroundPosition: 'center'
   }
 
   const TextFieldStyle = {
