@@ -15,7 +15,8 @@ import Avatar from '@material-ui/core/Avatar'
 //import useWindowSize from '../custom-hooks/useWindowSize'
 
 const useStyle = makeStyles(theme => {
-  console.log(theme.palette.background)
+  //console.log(theme.palette.background)
+  console.log('test')
   return {
     test: {
       padding: theme.palette.background,
