@@ -54,6 +54,7 @@ const Header = ({ pathname }) => {
 
   return (
     <React.Fragment>
+      {console.log(pathname)}
       <AppBar
         position='absolute'
         color='default'
@@ -67,7 +68,7 @@ const Header = ({ pathname }) => {
         <Toolbar>
           <Container maxWidth='lg'>
             <Grid container>
-              <Routes menuType='logo' />
+              <Routes menuType='logo' pathname={pathname} />
 
               {isShow ? (
                 <div style={{ marginLeft: 'auto', paddingTop: '15px' }}>
@@ -97,14 +98,10 @@ const Header = ({ pathname }) => {
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        <Routes close={handleClose} />
+        {/* <Routes close={handleClose} pathname={pathname} /> */}
       </Menu>
     </React.Fragment>
   )
-}
-
-Header.getInitialProps = async ({ pathname }) => {
-  return { pathname }
 }
 
 export default Header

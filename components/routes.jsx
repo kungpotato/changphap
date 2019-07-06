@@ -34,7 +34,7 @@ const Routes = ({ menuType, close, pathname }) => {
   const classes = useStyles()
 
   return (
-    <React.Fragment>
+    <div className='routes'>
       {menuType === 'logo' ? (
         // ส่วนของ logo
         <Link href='/'>
@@ -55,7 +55,7 @@ const Routes = ({ menuType, close, pathname }) => {
           </Button>
         </Link>
       ) : (
-        <React.Fragment>
+        <div>
           {routes.map(item =>
             // ส่วนของ main menu
             menuType == 'main' ? (
@@ -92,14 +92,10 @@ const Routes = ({ menuType, close, pathname }) => {
               </MenuItem>
             )
           )}
-        </React.Fragment>
+        </div>
       )}
-    </React.Fragment>
+    </div>
   )
-}
-
-Routes.getInitialProps = async ({ pathname }) => {
-  return { pathname }
 }
 
 export default Routes

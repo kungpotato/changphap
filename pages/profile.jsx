@@ -37,12 +37,12 @@ const useStyle = makeStyles(theme => {
   }
 })
 
-const Profile = () => {
+const Profile = ({ pathname }) => {
   const classes = useStyle()
   //let winSize = useWindowSize()
   return (
     <div>
-      <Header />
+      <Header pathname={pathname} />
       <div className='root'>
         <div
           style={{
@@ -130,6 +130,10 @@ const Profile = () => {
       </div>
     </div>
   )
+}
+
+Profile.getInitialProps = async ({ pathname }) => {
+  return { pathname }
 }
 
 export default Profile
