@@ -13,14 +13,22 @@ module.exports = withLess({
     config.plugins.push(new webpack.DefinePlugin(env))
 
     if (dev) {
-      config.module.rules.push({
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: 'eslint-loader',
-        options: {
-          // eslint options (if necessary)
-        },
-      })
+      config.module.rules.push(
+        // {
+        //   test: /\.js$/,
+        //   exclude: /node_modules/,
+        //   loader: 'eslint-loader',
+        //   options: {
+        //     // eslint options (if necessary)
+        //   },
+        // },
+        {
+          test: /\.js$/,
+          exclude: /node_modules/,
+          loader: 'babel-loader',
+          options: {},
+        }
+      )
     }
 
     return config

@@ -6,22 +6,37 @@ const handle = app.getRequestHandler()
 
 // import React from 'react'
 // import { renderToString } from 'react-dom/server'
+// import CssBaseline from '@material-ui/core/CssBaseline'
 // import { ServerStyleSheets, ThemeProvider } from '@material-ui/styles'
 // import App from 'next/app'
 // import theme from './theme'
 
 // function renderFullPage(html, css) {
 //   return `
-//     <!DOCTYPE html>
-//     <html>
-//       <head>
-//         <title>My page</title>
-//         <style id="jss-server-side">${css}</style>
-//       </head>
-//       <body>
-//         <div id="root">${html}</div>
-//       </body>
-//     </html>
+//   <!DOCTYPE html>
+//   <html lang="en">
+//     <head>
+//       <title>My page</title>
+//       <style id="jss-server-side">${css}</style>
+//       <meta name='viewport' content='minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no'/>
+//       <link
+//         rel='stylesheet'
+//         href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap'
+//       />
+//       <link
+//         rel='stylesheet'
+//         href='https://fonts.googleapis.com/icon?family=Material+Icons'
+//       />
+//       <link
+//         href='https://fonts.googleapis.com/css?family=Mitr&display=swap'
+//         rel='stylesheet'
+//       />
+//     </head>
+//     <body>
+//       <script async src="build/bundle.js"></script>
+//       <div id="root">${html}</div>
+//     </body>
+//   </html>
 //   `
 // }
 
@@ -30,6 +45,7 @@ const handle = app.getRequestHandler()
 //   const html = renderToString(
 //     sheets.collect(
 //       <ThemeProvider theme={theme}>
+//         <CssBaseline />
 //         <App />
 //       </ThemeProvider>
 //     )
@@ -42,6 +58,7 @@ app
   .prepare()
   .then(() => {
     const server = express()
+    const port = process.env.PORT || 3000
 
     // server.use('/build', express.static('build'))
     // server.use(handleRender)
@@ -53,9 +70,9 @@ app
       return app.render(req, res, '/post', { slug: req.params.slug })
     })
 
-    server.listen(3000, err => {
+    server.listen(port, err => {
       if (err) throw err
-      console.log('> Ready on http://localhost:3000')
+      console.log(`> Ready on http://localhost: ${port}`)
     })
   })
   .catch(ex => {
