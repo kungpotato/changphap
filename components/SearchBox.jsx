@@ -41,7 +41,7 @@ const SearchBox = () => {
   const stylyBg = {
     backgroundImage: 'url("./static/images/photography.jpg")',
     width: '100%',
-    height: '100vh',
+    height: '550px',
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
     backgroundPosition: 'center'
@@ -53,7 +53,7 @@ const SearchBox = () => {
     justifyContent: 'center',
     alignItems: 'center',
     textAlign: 'center',
-    minHeight: '100vh',
+    minHeight: '550px',
     background: '#4eb8a036',
   }
 
