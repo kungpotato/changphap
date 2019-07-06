@@ -16,7 +16,7 @@ import Avatar from '@material-ui/core/Avatar'
 
 const useStyle = makeStyles(theme => {
   //console.log(theme.palette.background)
-  console.log('test')
+
   return {
     test: {
       padding: theme.palette.background,
