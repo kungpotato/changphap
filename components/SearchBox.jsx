@@ -33,7 +33,7 @@ const StyledTextField = styled(TextField)`
   }
   .MuiInputBase-input {
     color: #fff;
-    width: 275px;
+    width: 200px;
   }
 `
 
@@ -44,7 +44,6 @@ const SearchBox = () => {
     height: '100vh',
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
-    backgroundSize: 'contain',
     backgroundPosition: 'center'
   }
 
