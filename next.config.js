@@ -1,8 +1,8 @@
 const webpack = require('webpack')
-const withLess = require('@zeit/next-less')
+const withSass = require('@zeit/next-sass')
 require('dotenv').config()
 
-module.exports = withLess({
+module.exports = withSass({
   //target: 'serverless',
   webpack: (config, { dev }) => {
     const env = Object.keys(process.env).reduce((acc, curr) => {
