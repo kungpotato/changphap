@@ -33,7 +33,7 @@ const StyledTextField = styled(TextField)`
   }
   .MuiInputBase-input {
     color: #fff;
-    width: 200px;
+    width: 180px;
   }
 `
 
@@ -67,7 +67,7 @@ const SearchBox = () => {
   }
 
   return (
-    <React.Fragment>
+    <div style={{ marginBottom: '50px' }}>
       <div style={stylyBg}>
         <div style={TextFieldStyle}>
           <Typography
@@ -137,7 +137,7 @@ const SearchBox = () => {
           </Grid>
         </div>
       </div>
-    </React.Fragment>
+    </div>
   )
 }
 

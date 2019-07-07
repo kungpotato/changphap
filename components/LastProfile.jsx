@@ -9,21 +9,54 @@ import IconButton from '@material-ui/core/IconButton'
 import FavoriteIconHalf from '@material-ui/icons/StarHalf'
 import FavoriteIcon from '@material-ui/icons/Star'
 import MoreVertIcon from '@material-ui/icons/MoreVert'
+import CardActionArea from '@material-ui/core/CardActionArea'
+import CardMedia from '@material-ui/core/CardMedia'
+import '../styles/homeStyle.scss'
+import AliceCarousel from 'react-alice-carousel'
 
 const LastProfile = () => {
   useEffect(() => {}, [])
 
+  const imgTest =
+    'https://images.unsplash.com/photo-1544736826-61c35a3511dc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80'
+
+  const starRating = {
+    color: '#FAD72D',
+    fontSize: '15px',
+  }
+
+  const slideResponse = {
+    0: {
+      items: 1,
+    },
+    768: {
+      items: 2,
+    },
+    1023: {
+      items: 4,
+    },
+  }
+
   return (
-    <div style={{ marginTop: '50px' }}>
+    <Grid style={{ marginBottom: '50px', maxWidth: '1280px', margin: 'auto' }}>
       <Typography
         variant='h3'
         style={{ textAlign: 'center', marginBottom: '50px' }}
       >
         ผลงานล่าสุด
       </Typography>
-      <Grid container style={{ justifyContent: 'center' }}>
-        <Grid item lg={2} style={{ margin: '10px' }}>
-          <Card>
+      <AliceCarousel
+        container
+        buttonsDisabled
+        dotsDisabled
+        mouseDragEnabled
+        autoPlay
+        autoPlayInterval={2000}
+        duration={500}
+        responsive={slideResponse}
+      >
+        <Grid item style={{ margin: '10px' }}>
+          <Card className='cardPort'>
             <CardHeader
               avatar={<Avatar aria-label='Recipe'>S</Avatar>}
               action={
@@ -34,40 +67,41 @@ const LastProfile = () => {
               title='Somtuy Kongkounkoy'
               subheader='Online 12 min'
             />
-            <div style={{ padding: '20px' }}>
-              <img
-                src='https://material-ui.com/static/images/cards/paella.jpg'
-                alt=''
-                style={{ width: '100%' }}
+            <CardActionArea>
+              <CardMedia
+                style={{ height: '200px', margin: '5px' }}
+                image={imgTest}
+                title='Contemplative Reptile'
               />
-            </div>
-            <CardContent>
-              <Typography variant='body2' color='textSecondary' component='p'>
-                This impressive paella is a perfect party dish and a fun meal to
-                cook together with your guests. Add 1 cup of frozen peas along
-                with the mussels, if you like.
-              </Typography>
-            </CardContent>
+              <CardContent>
+                <Typography gutterBottom variant='h5' component='h2'>
+                  Lizard
+                </Typography>
+                <Typography variant='body2' color='textSecondary' component='p'>
+                  Lizards are a widespread group of squamate reptiles, with over
+                </Typography>
+              </CardContent>
+            </CardActionArea>
             <Divider style={{ maxWidth: '80%', margin: 'auto' }} />
             <Grid container>
               <Grid item lg={6}>
                 <CardActions disableSpacing>
-                  <IconButton
+                  <div
                     aria-label='Add to favorites'
                     style={{ paddingBottom: '0' }}
                   >
-                    <FavoriteIcon style={{ color: '#ffc800' }} />
-                    <FavoriteIcon style={{ color: '#ffc800' }} />
-                    <FavoriteIcon style={{ color: '#ffc800' }} />
-                    <FavoriteIcon style={{ color: '#ffc800' }} />
-                    <FavoriteIconHalf style={{ color: '#ffc800' }} />
-                  </IconButton>
+                    <FavoriteIcon style={starRating} />
+                    <FavoriteIcon style={starRating} />
+                    <FavoriteIcon style={starRating} />
+                    <FavoriteIcon style={starRating} />
+                    <FavoriteIconHalf style={starRating} />
+                  </div>
                 </CardActions>
                 <div style={{ marginLeft: '30px' }}>
                   <small>4.5 (35)</small>
                 </div>
               </Grid>
-              <Grid item lg={6}>
+              <Grid item lg={6} style={{ marginLeft: 'auto' }}>
                 <div style={{ marginTop: '22px' }}>
                   <div>
                     <Typography
@@ -83,7 +117,7 @@ const LastProfile = () => {
                         textAlign: 'right',
                         marginRight: '30px',
                       }}
-                      variant='h6'
+                      variant='subtitle2'
                     >
                       {' '}
                       3,500 บาท
@@ -94,8 +128,8 @@ const LastProfile = () => {
             </Grid>
           </Card>
         </Grid>
-        <Grid item lg={2} style={{ margin: '10px' }}>
-          <Card>
+        <Grid item style={{ margin: '10px' }}>
+          <Card className='cardPort'>
             <CardHeader
               avatar={<Avatar aria-label='Recipe'>S</Avatar>}
               action={
@@ -106,40 +140,41 @@ const LastProfile = () => {
               title='Somtuy Kongkounkoy'
               subheader='Online 12 min'
             />
-            <div style={{ padding: '20px' }}>
-              <img
-                src='https://material-ui.com/static/images/cards/paella.jpg'
-                alt=''
-                style={{ width: '100%' }}
+            <CardActionArea>
+              <CardMedia
+                style={{ height: '200px', margin: '5px' }}
+                image={imgTest}
+                title='Contemplative Reptile'
               />
-            </div>
-            <CardContent>
-              <Typography variant='body2' color='textSecondary' component='p'>
-                This impressive paella is a perfect party dish and a fun meal to
-                cook together with your guests. Add 1 cup of frozen peas along
-                with the mussels, if you like.
-              </Typography>
-            </CardContent>
+              <CardContent>
+                <Typography gutterBottom variant='h5' component='h2'>
+                  Lizard
+                </Typography>
+                <Typography variant='body2' color='textSecondary' component='p'>
+                  Lizards are a widespread group of squamate reptiles, with over
+                </Typography>
+              </CardContent>
+            </CardActionArea>
             <Divider style={{ maxWidth: '80%', margin: 'auto' }} />
             <Grid container>
               <Grid item lg={6}>
                 <CardActions disableSpacing>
-                  <IconButton
+                  <div
                     aria-label='Add to favorites'
                     style={{ paddingBottom: '0' }}
                   >
-                    <FavoriteIcon style={{ color: '#ffc800' }} />
-                    <FavoriteIcon style={{ color: '#ffc800' }} />
-                    <FavoriteIcon style={{ color: '#ffc800' }} />
-                    <FavoriteIcon style={{ color: '#ffc800' }} />
-                    <FavoriteIconHalf style={{ color: '#ffc800' }} />
-                  </IconButton>
+                    <FavoriteIcon style={starRating} />
+                    <FavoriteIcon style={starRating} />
+                    <FavoriteIcon style={starRating} />
+                    <FavoriteIcon style={starRating} />
+                    <FavoriteIconHalf style={starRating} />
+                  </div>
                 </CardActions>
                 <div style={{ marginLeft: '30px' }}>
                   <small>4.5 (35)</small>
                 </div>
               </Grid>
-              <Grid item lg={6}>
+              <Grid item lg={6} style={{ marginLeft: 'auto' }}>
                 <div style={{ marginTop: '22px' }}>
                   <div>
                     <Typography
@@ -155,7 +190,7 @@ const LastProfile = () => {
                         textAlign: 'right',
                         marginRight: '30px',
                       }}
-                      variant='h6'
+                      variant='subtitle2'
                     >
                       {' '}
                       3,500 บาท
@@ -166,8 +201,8 @@ const LastProfile = () => {
             </Grid>
           </Card>
         </Grid>
-        <Grid item lg={2} style={{ margin: '10px' }}>
-          <Card>
+        <Grid item style={{ margin: '10px' }}>
+          <Card className='cardPort'>
             <CardHeader
               avatar={<Avatar aria-label='Recipe'>S</Avatar>}
               action={
@@ -178,40 +213,41 @@ const LastProfile = () => {
               title='Somtuy Kongkounkoy'
               subheader='Online 12 min'
             />
-            <div style={{ padding: '20px' }}>
-              <img
-                src='https://material-ui.com/static/images/cards/paella.jpg'
-                alt=''
-                style={{ width: '100%' }}
+            <CardActionArea>
+              <CardMedia
+                style={{ height: '200px', margin: '5px' }}
+                image={imgTest}
+                title='Contemplative Reptile'
               />
-            </div>
-            <CardContent>
-              <Typography variant='body2' color='textSecondary' component='p'>
-                This impressive paella is a perfect party dish and a fun meal to
-                cook together with your guests. Add 1 cup of frozen peas along
-                with the mussels, if you like.
-              </Typography>
-            </CardContent>
+              <CardContent>
+                <Typography gutterBottom variant='h5' component='h2'>
+                  Lizard
+                </Typography>
+                <Typography variant='body2' color='textSecondary' component='p'>
+                  Lizards are a widespread group of squamate reptiles, with over
+                </Typography>
+              </CardContent>
+            </CardActionArea>
             <Divider style={{ maxWidth: '80%', margin: 'auto' }} />
             <Grid container>
               <Grid item lg={6}>
                 <CardActions disableSpacing>
-                  <IconButton
+                  <div
                     aria-label='Add to favorites'
                     style={{ paddingBottom: '0' }}
                   >
-                    <FavoriteIcon style={{ color: '#ffc800' }} />
-                    <FavoriteIcon style={{ color: '#ffc800' }} />
-                    <FavoriteIcon style={{ color: '#ffc800' }} />
-                    <FavoriteIcon style={{ color: '#ffc800' }} />
-                    <FavoriteIconHalf style={{ color: '#ffc800' }} />
-                  </IconButton>
+                    <FavoriteIcon style={starRating} />
+                    <FavoriteIcon style={starRating} />
+                    <FavoriteIcon style={starRating} />
+                    <FavoriteIcon style={starRating} />
+                    <FavoriteIconHalf style={starRating} />
+                  </div>
                 </CardActions>
                 <div style={{ marginLeft: '30px' }}>
                   <small>4.5 (35)</small>
                 </div>
               </Grid>
-              <Grid item lg={6}>
+              <Grid item lg={6} style={{ marginLeft: 'auto' }}>
                 <div style={{ marginTop: '22px' }}>
                   <div>
                     <Typography
@@ -227,7 +263,7 @@ const LastProfile = () => {
                         textAlign: 'right',
                         marginRight: '30px',
                       }}
-                      variant='h6'
+                      variant='subtitle2'
                     >
                       {' '}
                       3,500 บาท
@@ -238,8 +274,8 @@ const LastProfile = () => {
             </Grid>
           </Card>
         </Grid>
-        <Grid item lg={2} style={{ margin: '10px' }}>
-          <Card>
+        <Grid item style={{ margin: '10px' }}>
+          <Card className='cardPort'>
             <CardHeader
               avatar={<Avatar aria-label='Recipe'>S</Avatar>}
               action={
@@ -250,40 +286,41 @@ const LastProfile = () => {
               title='Somtuy Kongkounkoy'
               subheader='Online 12 min'
             />
-            <div style={{ padding: '20px' }}>
-              <img
-                src='https://material-ui.com/static/images/cards/paella.jpg'
-                alt=''
-                style={{ width: '100%' }}
+            <CardActionArea>
+              <CardMedia
+                style={{ height: '200px', margin: '5px' }}
+                image={imgTest}
+                title='Contemplative Reptile'
               />
-            </div>
-            <CardContent>
-              <Typography variant='body2' color='textSecondary' component='p'>
-                This impressive paella is a perfect party dish and a fun meal to
-                cook together with your guests. Add 1 cup of frozen peas along
-                with the mussels, if you like.
-              </Typography>
-            </CardContent>
+              <CardContent>
+                <Typography gutterBottom variant='h5' component='h2'>
+                  Lizard
+                </Typography>
+                <Typography variant='body2' color='textSecondary' component='p'>
+                  Lizards are a widespread group of squamate reptiles, with over
+                </Typography>
+              </CardContent>
+            </CardActionArea>
             <Divider style={{ maxWidth: '80%', margin: 'auto' }} />
             <Grid container>
               <Grid item lg={6}>
                 <CardActions disableSpacing>
-                  <IconButton
+                  <div
                     aria-label='Add to favorites'
                     style={{ paddingBottom: '0' }}
                   >
-                    <FavoriteIcon style={{ color: '#ffc800' }} />
-                    <FavoriteIcon style={{ color: '#ffc800' }} />
-                    <FavoriteIcon style={{ color: '#ffc800' }} />
-                    <FavoriteIcon style={{ color: '#ffc800' }} />
-                    <FavoriteIconHalf style={{ color: '#ffc800' }} />
-                  </IconButton>
+                    <FavoriteIcon style={starRating} />
+                    <FavoriteIcon style={starRating} />
+                    <FavoriteIcon style={starRating} />
+                    <FavoriteIcon style={starRating} />
+                    <FavoriteIconHalf style={starRating} />
+                  </div>
                 </CardActions>
                 <div style={{ marginLeft: '30px' }}>
                   <small>4.5 (35)</small>
                 </div>
               </Grid>
-              <Grid item lg={6}>
+              <Grid item lg={6} style={{ marginLeft: 'auto' }}>
                 <div style={{ marginTop: '22px' }}>
                   <div>
                     <Typography
@@ -299,7 +336,7 @@ const LastProfile = () => {
                         textAlign: 'right',
                         marginRight: '30px',
                       }}
-                      variant='h6'
+                      variant='subtitle2'
                     >
                       {' '}
                       3,500 บาท
@@ -310,8 +347,8 @@ const LastProfile = () => {
             </Grid>
           </Card>
         </Grid>
-        <Grid item lg={2} style={{ margin: '10px' }}>
-          <Card>
+        <Grid item style={{ margin: '10px' }}>
+          <Card className='cardPort'>
             <CardHeader
               avatar={<Avatar aria-label='Recipe'>S</Avatar>}
               action={
@@ -322,40 +359,41 @@ const LastProfile = () => {
               title='Somtuy Kongkounkoy'
               subheader='Online 12 min'
             />
-            <div style={{ padding: '20px' }}>
-              <img
-                src='https://material-ui.com/static/images/cards/paella.jpg'
-                alt=''
-                style={{ width: '100%' }}
+            <CardActionArea>
+              <CardMedia
+                style={{ height: '200px', margin: '5px' }}
+                image={imgTest}
+                title='Contemplative Reptile'
               />
-            </div>
-            <CardContent>
-              <Typography variant='body2' color='textSecondary' component='p'>
-                This impressive paella is a perfect party dish and a fun meal to
-                cook together with your guests. Add 1 cup of frozen peas along
-                with the mussels, if you like.
-              </Typography>
-            </CardContent>
+              <CardContent>
+                <Typography gutterBottom variant='h5' component='h2'>
+                  Lizard
+                </Typography>
+                <Typography variant='body2' color='textSecondary' component='p'>
+                  Lizards are a widespread group of squamate reptiles, with over
+                </Typography>
+              </CardContent>
+            </CardActionArea>
             <Divider style={{ maxWidth: '80%', margin: 'auto' }} />
             <Grid container>
               <Grid item lg={6}>
                 <CardActions disableSpacing>
-                  <IconButton
+                  <div
                     aria-label='Add to favorites'
                     style={{ paddingBottom: '0' }}
                   >
-                    <FavoriteIcon style={{ color: '#ffc800' }} />
-                    <FavoriteIcon style={{ color: '#ffc800' }} />
-                    <FavoriteIcon style={{ color: '#ffc800' }} />
-                    <FavoriteIcon style={{ color: '#ffc800' }} />
-                    <FavoriteIconHalf style={{ color: '#ffc800' }} />
-                  </IconButton>
+                    <FavoriteIcon style={starRating} />
+                    <FavoriteIcon style={starRating} />
+                    <FavoriteIcon style={starRating} />
+                    <FavoriteIcon style={starRating} />
+                    <FavoriteIconHalf style={starRating} />
+                  </div>
                 </CardActions>
                 <div style={{ marginLeft: '30px' }}>
                   <small>4.5 (35)</small>
                 </div>
               </Grid>
-              <Grid item lg={6}>
+              <Grid item lg={6} style={{ marginLeft: 'auto' }}>
                 <div style={{ marginTop: '22px' }}>
                   <div>
                     <Typography
@@ -371,7 +409,7 @@ const LastProfile = () => {
                         textAlign: 'right',
                         marginRight: '30px',
                       }}
-                      variant='h6'
+                      variant='subtitle2'
                     >
                       {' '}
                       3,500 บาท
@@ -382,8 +420,8 @@ const LastProfile = () => {
             </Grid>
           </Card>
         </Grid>
-      </Grid>
-    </div>
+      </AliceCarousel>
+    </Grid>
   )
 }
 
