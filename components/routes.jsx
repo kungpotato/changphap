@@ -27,7 +27,7 @@ const routes = [
   { routeName: 'ค้นหาช่างภาพ', path: '/browse' },
   { routeName: 'โปรไฟล์', path: '/profile' },
   { routeName: 'บทความ', path: '/content' },
-  { routeName: 'สมัครช่างภาพ', path: null },
+  { routeName: 'สมัครช่างภาพ', path: '/register' },
   { routeName: 'เข้าสู่ระบบ', path: null },
 ]
 
