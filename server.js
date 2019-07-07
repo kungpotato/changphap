@@ -67,7 +67,7 @@ app
       return handle(req, res)
     })
     server.get('/browse/:slug', (req, res) => {
-      return app.render(req, res, '/post', { slug: req.params.slug })
+      return app.render(req, res, '/browse', { slug: req.params.slug })
     })
 
     server.listen(port, err => {
