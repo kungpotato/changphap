@@ -19,6 +19,8 @@ const LastProfile = () => {
 
   const imgTest =
     'https://images.unsplash.com/photo-1544736826-61c35a3511dc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80'
+  const avatarImg =
+    'https://images.unsplash.com/photo-1506919258185-6078bba55d2a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=815&q=80'
 
   const starRating = {
     color: '#FAD72D',
@@ -58,7 +60,7 @@ const LastProfile = () => {
         <Grid item style={{ margin: '10px' }}>
           <Card className='cardPort'>
             <CardHeader
-              avatar={<Avatar aria-label='Recipe'>S</Avatar>}
+              avatar={<Avatar aria-label='Recipe' src={avatarImg}></Avatar>}
               action={
                 <IconButton aria-label='Settings'>
                   <MoreVertIcon />
@@ -131,7 +133,7 @@ const LastProfile = () => {
         <Grid item style={{ margin: '10px' }}>
           <Card className='cardPort'>
             <CardHeader
-              avatar={<Avatar aria-label='Recipe'>S</Avatar>}
+              avatar={<Avatar aria-label='Recipe' src={avatarImg}></Avatar>}
               action={
                 <IconButton aria-label='Settings'>
                   <MoreVertIcon />
@@ -204,7 +206,7 @@ const LastProfile = () => {
         <Grid item style={{ margin: '10px' }}>
           <Card className='cardPort'>
             <CardHeader
-              avatar={<Avatar aria-label='Recipe'>S</Avatar>}
+              avatar={<Avatar aria-label='Recipe' src={avatarImg}></Avatar>}
               action={
                 <IconButton aria-label='Settings'>
                   <MoreVertIcon />
@@ -277,7 +279,7 @@ const LastProfile = () => {
         <Grid item style={{ margin: '10px' }}>
           <Card className='cardPort'>
             <CardHeader
-              avatar={<Avatar aria-label='Recipe'>S</Avatar>}
+              avatar={<Avatar aria-label='Recipe' src={avatarImg}></Avatar>}
               action={
                 <IconButton aria-label='Settings'>
                   <MoreVertIcon />
@@ -350,7 +352,7 @@ const LastProfile = () => {
         <Grid item style={{ margin: '10px' }}>
           <Card className='cardPort'>
             <CardHeader
-              avatar={<Avatar aria-label='Recipe'>S</Avatar>}
+              avatar={<Avatar aria-label='Recipe' src={avatarImg}></Avatar>}
               action={
                 <IconButton aria-label='Settings'>
                   <MoreVertIcon />

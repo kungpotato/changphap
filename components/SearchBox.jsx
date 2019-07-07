@@ -33,7 +33,9 @@ const StyledTextField = styled(TextField)`
   }
   .MuiInputBase-input {
     color: #fff;
-    width: 180px;
+  }
+  .MuiFormControl-root {
+    width: 100% !important;
   }
 `
 
@@ -93,26 +95,43 @@ const SearchBox = () => {
             <Grid
               item
               xs={12}
+              md={12}
               lg={4}
-              style={{ backgroundColor: 'rgba(0, 0, 0, 0.39)' }}
+              style={{
+                paddingRight: '20px',
+                paddingLeft: '20px',
+                backgroundColor: 'rgba(0, 0, 0, 0.39)',
+                height: '106px',
+              }}
             >
               <StyledTextField
                 style={{
-                  paddingRight: '10px',
-                  marginBottom: '10px',
                   paddingTop: '20px',
                   paddingBottom: '20px',
+                  width: '100%',
                 }}
                 label='ค้นหาช่างภาพใกล้คุณ'
                 id='deterministic-outlined-input'
                 variant='outlined'
               />
+            </Grid>
+            <Grid
+              item
+              xs={12}
+              md={12}
+              lg={4}
+              style={{
+                paddingRight: '20px',
+                paddingLeft: '20px',
+                backgroundColor: 'rgba(0, 0, 0, 0.39)',
+                height: '106px',
+              }}
+            >
               <StyledTextField
                 style={{
-                  paddingRight: '10px',
-                  marginBottom: '10px',
                   paddingTop: '20px',
                   paddingBottom: '20px',
+                  width: '100%',
                 }}
                 label='ค้นหาตามประเภทของงาน'
                 id='deterministic-outlined-input'
