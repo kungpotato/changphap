@@ -1,6 +1,6 @@
 import React from 'react'
 import App, { Container } from 'next/app'
-import '../styles/styles.less'
+import '../styles/styles.scss'
 import { ThemeProvider } from '@material-ui/styles'
 import theme from '../theme'
 

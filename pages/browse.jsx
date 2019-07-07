@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import '../styles/styles.less'
 import { css } from '@emotion/core'
 import { BounceLoader } from 'react-spinners'
 import { makeStyles, Container } from '@material-ui/core'
