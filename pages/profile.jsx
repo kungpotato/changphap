@@ -1,5 +1,4 @@
 import React from 'react'
-import '../styles/styles.less'
 import Typography from '@material-ui/core/Typography'
 import { makeStyles } from '@material-ui/styles'
 import {
