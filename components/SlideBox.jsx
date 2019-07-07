@@ -6,41 +6,64 @@ const SlideBox = () => {
   return (
     <div>
       <AliceCarousel
+        dotsDisabled
         mouseDragEnabled
+        autoPlay
+        autoPlayInterval={4000}
+        duration={1000}
         responsive={{
           0: {
             items: 1,
           },
-          1024: {
-            items: 3,
+          1023: {
+            items: 4,
           },
         }}
+        // stagePadding={{
+        //   paddingLeft: 10,
+        //   paddingRight: 10,
+        // }}
       >
-        <img
-          src='./static/images/bride.jpg'
-          onDragStart={handleOnDragStart}
-          className='yours-custom-class'
-        />
-        <img
-          src='./static/images/bride.jpg'
-          onDragStart={handleOnDragStart}
-          className='yours-custom-class'
-        />
-        <img
-          src='./static/images/bride.jpg'
-          onDragStart={handleOnDragStart}
-          className='yours-custom-class'
-        />
-        <img
-          src='./static/images/bride.jpg'
-          onDragStart={handleOnDragStart}
-          className='yours-custom-class'
-        />
-        <img
-          src='./static/images/bride.jpg'
-          onDragStart={handleOnDragStart}
-          className='yours-custom-class'
-        />
+        <div style={{ margin: '15px' }}>
+          <img
+            src='./static/images/bride.jpg'
+            onDragStart={handleOnDragStart}
+            className='yours-custom-class'
+            style={{ width: '100%' }}
+          />
+        </div>
+        <div style={{ margin: '15px' }}>
+          <img
+            src='./static/images/bride.jpg'
+            onDragStart={handleOnDragStart}
+            className='yours-custom-class'
+            style={{ width: '100%' }}
+          />
+        </div>
+        <div style={{ margin: '15px' }}>
+          <img
+            src='./static/images/bride.jpg'
+            onDragStart={handleOnDragStart}
+            className='yours-custom-class'
+            style={{ width: '100%' }}
+          />
+        </div>
+        <div style={{ margin: '15px' }}>
+          <img
+            src='./static/images/bride.jpg'
+            onDragStart={handleOnDragStart}
+            className='yours-custom-class'
+            style={{ width: '100%' }}
+          />
+        </div>
+        <div style={{ margin: '15px' }}>
+          <img
+            src='./static/images/bride.jpg'
+            onDragStart={handleOnDragStart}
+            className='yours-custom-class'
+            style={{ width: '100%' }}
+          />
+        </div>
       </AliceCarousel>
     </div>
   )

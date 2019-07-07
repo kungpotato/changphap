@@ -1,7 +1,7 @@
 import React from 'react'
 import Header from '../components/Header'
 import SlideBox from '../components/SlideBox'
-import { Container, Typography, Grid } from '@material-ui/core'
+import { Container, Typography, Grid, Button } from '@material-ui/core'
 import { makeStyles } from '@material-ui/styles'
 import PhotoCamera from '@material-ui/icons/photoCamera'
 
@@ -18,6 +18,14 @@ const useStyle = makeStyles(theme => {
     iconStyle: {
       fontSize: '60px',
       color: theme.palette.primary.main,
+    },
+    btnStyle: {
+      color: '#fff',
+      marginTop: '25px',
+      borderRadius: '0',
+      fontSize: '25px',
+      marginLeft: '15px',
+      marginRight: '15px',
     },
   }
 })
@@ -60,10 +68,30 @@ const Register = () => {
           backgroundImage: 'url("./static/images/photo.jpg")',
           backgroundSize: 'cover',
           width: '100%',
-          paddingBottom: '275px',
+          paddingTop: '100px',
+          paddingBottom: '100px',
         }}
       >
-        test
+        <Grid container justify='center'>
+          <Grid item sm={6} style={{ textAlign: 'center' }}>
+            <Button
+              variant='contained'
+              className={classses.btnStyle}
+              size='large'
+              color='primary'
+            >
+              อ่านรายละเอียด
+            </Button>
+            <Button
+              variant='contained'
+              className={classses.btnStyle}
+              size='large'
+              color='primary'
+            >
+              ลงทะเบียนช่างภาพ
+            </Button>
+          </Grid>
+        </Grid>
       </div>
       <Container maxWidth='xl' style={{ marginTop: '35px' }}>
         <Typography
@@ -148,6 +176,20 @@ const Register = () => {
             marginBottom: '50px',
           }}
         />
+        <Typography
+          variant='h3'
+          style={{ textAlign: 'center', marginBottom: '50px' }}
+        >
+          รายละเอียดข้อตกลง
+        </Typography>
+
+        <Typography variant='h6' className={classses.textDetail}>
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+          commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus
+          et magnis dis parturient montes, nascetur ridiculus mus. Donec quam
+          felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla
+          consequat massa quis enim. Donec pede justo, fringilla vel,
+        </Typography>
       </Container>
     </div>
   )
