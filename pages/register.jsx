@@ -8,22 +8,18 @@ import PhotoCamera from '@material-ui/icons/photoCamera'
 const useStyle = makeStyles(theme => {
   //console.log(theme.palette.primary)
   return {
-    textDetail: {
-      fontSize: '20px',
-    },
     fontStyle: {
       color: theme.palette.primary.main,
       fontSize: '30px',
     },
     iconStyle: {
-      fontSize: '60px',
+      fontSize: '50px',
       color: theme.palette.primary.main,
     },
     btnStyle: {
       color: '#fff',
       marginTop: '25px',
       borderRadius: '0',
-      fontSize: '25px',
       marginLeft: '15px',
       marginRight: '15px',
     },
@@ -36,17 +32,16 @@ const Register = () => {
     <div>
       <Header />
       <Container
-        maxWidth='xl'
-        style={{ marginTop: '120px', marginBottom: '30px' }}
+        maxWidth='lg'
+        style={{ marginTop: '100px', marginBottom: '30px' }}
       >
         <Typography
-          variant='h3'
-          style={{ textAlign: 'center', marginBottom: '50px' }}
+          variant='h5'
+          style={{ textAlign: 'center', marginBottom: '20px' }}
         >
           ทำไมช่างภาพต้องสมัคร SONGNIW ?
         </Typography>
-
-        <Typography variant='h6' className={classses.textDetail}>
+        <Typography variant='body1'>
           Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
           commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus
           et magnis dis parturient montes, nascetur ridiculus mus. Donec quam
@@ -93,29 +88,20 @@ const Register = () => {
           </Grid>
         </Grid>
       </div>
-      <Container maxWidth='xl' style={{ marginTop: '35px' }}>
+      <Container maxWidth='lg' style={{ marginTop: '35px' }}>
         <Typography
-          variant='h3'
+          variant='h5'
           style={{ textAlign: 'center', marginBottom: '50px' }}
         >
           วิธีการสมัคร
         </Typography>
-        <hr
-          style={{
-            maxWidth: '80%',
-            borderColor: '#4EB8A0',
-            color: '#00000',
-            marginTop: '50px',
-            marginBottom: '50px',
-          }}
-        />
         <Grid container spacing={3} style={{ textAlign: 'center' }}>
           <Grid item xs={6} md={3}>
             <PhotoCamera className={classses.iconStyle} />
             <Typography className={classses.fontStyle} variant='h5'>
               หาช่างภาพ
             </Typography>
-            <Typography variant='h6' className={classses.textDetail}>
+            <Typography variant='body1'>
               ถ่ายภาพถ่ายภาพถ่ายภาพถ่ายภาพถ่ายภาพถ่ายภาพถ่ายภาพถ่ายภาพถ่ายภาพ
             </Typography>
           </Grid>
@@ -124,7 +110,7 @@ const Register = () => {
             <Typography className={classses.fontStyle} variant='h5'>
               หาช่างภาพ
             </Typography>
-            <Typography variant='h6' className={classses.textDetail}>
+            <Typography variant='body1'>
               ถ่ายภาพถ่ายภาพถ่ายภาพถ่ายภาพถ่ายภาพถ่ายภาพถ่ายภาพถ่ายภาพถ่ายภาพ
             </Typography>
           </Grid>
@@ -133,7 +119,7 @@ const Register = () => {
             <Typography className={classses.fontStyle} variant='h5'>
               หาช่างภาพ
             </Typography>
-            <Typography variant='h6' className={classses.textDetail}>
+            <Typography variant='body1'>
               ถ่ายภาพถ่ายภาพถ่ายภาพถ่ายภาพถ่ายภาพถ่ายภาพถ่ายภาพถ่ายภาพถ่ายภาพ
             </Typography>
           </Grid>
@@ -142,7 +128,7 @@ const Register = () => {
             <Typography className={classses.fontStyle} variant='h5'>
               หาช่างภาพ
             </Typography>
-            <Typography variant='h6' className={classses.textDetail}>
+            <Typography variant='body1'>
               ถ่ายภาพถ่ายภาพถ่ายภาพถ่ายภาพถ่ายภาพถ่ายภาพถ่ายภาพถ่ายภาพถ่ายภาพ
             </Typography>
           </Grid>
@@ -157,11 +143,11 @@ const Register = () => {
           }}
         />
         <Typography
-          variant='h3'
+          variant='h5'
           style={{
             textAlign: 'center',
-            marginBottom: '50px',
-            marginTop: '60px',
+            marginBottom: '20px',
+            marginTop: '20px',
           }}
         >
           ความคิดเห็นช่างภาพที่ใช้งาน SONGNIW
@@ -177,19 +163,29 @@ const Register = () => {
           }}
         />
         <Typography
-          variant='h3'
-          style={{ textAlign: 'center', marginBottom: '50px' }}
+          variant='h5'
+          style={{ textAlign: 'center', marginBottom: '20px' }}
         >
           รายละเอียดข้อตกลง
         </Typography>
 
-        <Typography variant='h6' className={classses.textDetail}>
+        <Typography variant='body1' className={classses.textDetail}>
           Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
           commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus
           et magnis dis parturient montes, nascetur ridiculus mus. Donec quam
           felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla
           consequat massa quis enim. Donec pede justo, fringilla vel,
         </Typography>
+        <div style={{ textAlign: 'center', marginBottom: '50px' }}>
+          <Button
+            variant='contained'
+            className={classses.btnStyle}
+            size='large'
+            color='primary'
+          >
+            ลงทะเบียนช่างภาพ
+          </Button>
+        </div>
       </Container>
     </div>
   )

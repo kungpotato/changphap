@@ -60,7 +60,7 @@ const Profile = () => {
             style={{ width: '100%' }}
           />
         </div>
-        <Container maxWidth='xl' style={{ marginTop: '100px' }}>
+        <Container maxWidth='lg' style={{ marginTop: '100px' }}>
           <div className='im-profile'>
             <Avatar
               alt=''
@@ -69,7 +69,7 @@ const Profile = () => {
             />
           </div>
           <Typography
-            variant='h4'
+            variant='h5'
             align='center'
             style={{
               textShadow: '2px 2px 4px #000000',
@@ -82,20 +82,20 @@ const Profile = () => {
           <Grid container style={{ background: '#fff' }} justify='center'>
             <Grid item xs={12} sm={4} style={{ padding: '15px' }}>
               <Paper square style={{ padding: '15px', marginBottom: '30px' }}>
-                <Typography variant='h6' align='center' color='primary'>
+                <Typography variant='h5' align='center' color='primary'>
                   ข้อมูลทั่วไป
                 </Typography>
                 <hr />
               </Paper>
               <Paper square style={{ padding: '15px' }}>
-                <Typography variant='h6' align='center' color='primary'>
+                <Typography variant='h5' align='center' color='primary'>
                   การรับงาน
                 </Typography>
                 <hr />
               </Paper>
             </Grid>
             <Grid item xs={12} sm={8} style={{ padding: '15px' }}>
-              <Typography variant='h6' align='center' color='primary'>
+              <Typography variant='h5' align='center' color='primary'>
                 ผลงานที่ผ่านมา
               </Typography>
               <hr />
