@@ -1,20 +1,10 @@
-import React, { forwardRef, useState } from 'react'
+import React, { useState } from 'react'
 import Header from '../components/Header'
 import SlideBox from '../components/SlideBox'
-import {
-  Container,
-  Typography,
-  Grid,
-  Button,
-  Slide,
-  AppBar,
-  IconButton,
-  Toolbar,
-} from '@material-ui/core'
+import { Container, Typography, Grid, Button } from '@material-ui/core'
 import { makeStyles } from '@material-ui/styles'
 import PhotoCamera from '@material-ui/icons/photoCamera'
-import Dialog from '@material-ui/core/Dialog'
-import CloseIcon from '@material-ui/icons/Close'
+import RegisDialog from '../components/regisDialog'
 
 const useStyle = makeStyles(theme => {
   //console.log(theme.palette.primary)
@@ -44,17 +34,10 @@ const useStyle = makeStyles(theme => {
   }
 })
 
-const Transition = forwardRef(function Transition(props, ref) {
-  return <Slide direction='up' ref={ref} {...props} />
-})
-
 const Register = () => {
   const classes = useStyle()
-  const [open, setOpen] = useState(false)
 
-  const handleClose = () => {
-    setOpen(false)
-  }
+  const [open, setOpen] = useState(false)
   const handleOpen = () => {
     setOpen(true)
   }
@@ -220,43 +203,7 @@ const Register = () => {
           </Button>
         </div>
       </Container>
-      <Dialog
-        fullScreen
-        open={open}
-        onClose={handleClose}
-        TransitionComponent={Transition}
-      >
-        <AppBar className={classes.appBar}>
-          <Container maxWidth='lg'>
-            <Toolbar>
-              <IconButton
-                edge='start'
-                style={{ color: '#fff' }}
-                onClick={handleClose}
-                aria-label='Close'
-              >
-                <CloseIcon />
-              </IconButton>
-              <Typography
-                style={{ color: '#fff' }}
-                variant='h6'
-                className={classes.title}
-              >
-                กรุณากรอกข้อมูล
-              </Typography>
-              <Button
-                style={{ color: '#fff', fontSize: '18px' }}
-                onClick={handleClose}
-              >
-                save
-              </Button>
-            </Toolbar>
-          </Container>
-        </AppBar>
-        <Container maxWidth='lg'>
-          <Typography variant='body1'>wefgwgwegwevgb2t2t</Typography>
-        </Container>
-      </Dialog>
+      <RegisDialog open={open} handleClose={isClose => setOpen(isClose)} />
     </div>
   )
 }
