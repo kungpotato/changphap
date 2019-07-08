@@ -19,6 +19,17 @@ const theme = createMuiTheme({
   },
   typography: {
     fontFamily: ['"Mitr"', 'sans-serif'].join(','),
+    body1: {
+      fontSize: '16px',
+      fontWeight: 'normal',
+      color: '#5a5a5a',
+    },
+    body2: {
+      fontSize: '16px',
+      fontWeight: 'normal',
+      color: '#5a5a5a',
+      fontStyle: 'italic ',
+    },
   },
 })
 

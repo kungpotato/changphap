@@ -1,9 +1,20 @@
-import React from 'react'
+import React, { forwardRef, useState } from 'react'
 import Header from '../components/Header'
 import SlideBox from '../components/SlideBox'
-import { Container, Typography, Grid, Button } from '@material-ui/core'
+import {
+  Container,
+  Typography,
+  Grid,
+  Button,
+  Slide,
+  AppBar,
+  IconButton,
+  Toolbar,
+} from '@material-ui/core'
 import { makeStyles } from '@material-ui/styles'
 import PhotoCamera from '@material-ui/icons/photoCamera'
+import Dialog from '@material-ui/core/Dialog'
+import CloseIcon from '@material-ui/icons/Close'
 
 const useStyle = makeStyles(theme => {
   //console.log(theme.palette.primary)
@@ -23,11 +34,31 @@ const useStyle = makeStyles(theme => {
       marginLeft: '15px',
       marginRight: '15px',
     },
+    appBar: {
+      position: 'relative',
+    },
+    title: {
+      marginLeft: theme.spacing(2),
+      flex: 1,
+    },
   }
 })
 
+const Transition = forwardRef(function Transition(props, ref) {
+  return <Slide direction='up' ref={ref} {...props} />
+})
+
 const Register = () => {
-  const classses = useStyle()
+  const classes = useStyle()
+  const [open, setOpen] = useState(false)
+
+  const handleClose = () => {
+    setOpen(false)
+  }
+  const handleOpen = () => {
+    setOpen(true)
+  }
+
   return (
     <div>
       <Header />
@@ -71,7 +102,7 @@ const Register = () => {
           <Grid item sm={6} style={{ textAlign: 'center' }}>
             <Button
               variant='contained'
-              className={classses.btnStyle}
+              className={classes.btnStyle}
               size='large'
               color='primary'
             >
@@ -79,9 +110,10 @@ const Register = () => {
             </Button>
             <Button
               variant='contained'
-              className={classses.btnStyle}
+              className={classes.btnStyle}
               size='large'
               color='primary'
+              onClick={handleOpen}
             >
               ลงทะเบียนช่างภาพ
             </Button>
@@ -97,8 +129,8 @@ const Register = () => {
         </Typography>
         <Grid container spacing={3} style={{ textAlign: 'center' }}>
           <Grid item xs={6} md={3}>
-            <PhotoCamera className={classses.iconStyle} />
-            <Typography className={classses.fontStyle} variant='h5'>
+            <PhotoCamera className={classes.iconStyle} />
+            <Typography className={classes.fontStyle} variant='h5'>
               หาช่างภาพ
             </Typography>
             <Typography variant='body1'>
@@ -106,8 +138,8 @@ const Register = () => {
             </Typography>
           </Grid>
           <Grid item xs={6} md={3}>
-            <PhotoCamera className={classses.iconStyle} />
-            <Typography className={classses.fontStyle} variant='h5'>
+            <PhotoCamera className={classes.iconStyle} />
+            <Typography className={classes.fontStyle} variant='h5'>
               หาช่างภาพ
             </Typography>
             <Typography variant='body1'>
@@ -115,8 +147,8 @@ const Register = () => {
             </Typography>
           </Grid>
           <Grid item xs={6} md={3}>
-            <PhotoCamera className={classses.iconStyle} />
-            <Typography className={classses.fontStyle} variant='h5'>
+            <PhotoCamera className={classes.iconStyle} />
+            <Typography className={classes.fontStyle} variant='h5'>
               หาช่างภาพ
             </Typography>
             <Typography variant='body1'>
@@ -124,8 +156,8 @@ const Register = () => {
             </Typography>
           </Grid>
           <Grid item xs={6} md={3}>
-            <PhotoCamera className={classses.iconStyle} />
-            <Typography className={classses.fontStyle} variant='h5'>
+            <PhotoCamera className={classes.iconStyle} />
+            <Typography className={classes.fontStyle} variant='h5'>
               หาช่างภาพ
             </Typography>
             <Typography variant='body1'>
@@ -169,7 +201,7 @@ const Register = () => {
           รายละเอียดข้อตกลง
         </Typography>
 
-        <Typography variant='body1' className={classses.textDetail}>
+        <Typography variant='body1' className={classes.textDetail}>
           Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
           commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus
           et magnis dis parturient montes, nascetur ridiculus mus. Donec quam
@@ -179,14 +211,52 @@ const Register = () => {
         <div style={{ textAlign: 'center', marginBottom: '50px' }}>
           <Button
             variant='contained'
-            className={classses.btnStyle}
+            className={classes.btnStyle}
             size='large'
             color='primary'
+            onClick={handleOpen}
           >
             ลงทะเบียนช่างภาพ
           </Button>
         </div>
       </Container>
+      <Dialog
+        fullScreen
+        open={open}
+        onClose={handleClose}
+        TransitionComponent={Transition}
+      >
+        <AppBar className={classes.appBar}>
+          <Container maxWidth='lg'>
+            <Toolbar>
+              <IconButton
+                edge='start'
+                style={{ color: '#fff' }}
+                onClick={handleClose}
+                aria-label='Close'
+              >
+                <CloseIcon />
+              </IconButton>
+              <Typography
+                style={{ color: '#fff' }}
+                variant='h6'
+                className={classes.title}
+              >
+                กรุณากรอกข้อมูล
+              </Typography>
+              <Button
+                style={{ color: '#fff', fontSize: '18px' }}
+                onClick={handleClose}
+              >
+                save
+              </Button>
+            </Toolbar>
+          </Container>
+        </AppBar>
+        <Container maxWidth='lg'>
+          <Typography variant='body1'>wefgwgwegwevgb2t2t</Typography>
+        </Container>
+      </Dialog>
     </div>
   )
 }
