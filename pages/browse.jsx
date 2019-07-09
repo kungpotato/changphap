@@ -94,11 +94,7 @@ const Browse = ({ pathname, slug }) => {
           <Grid container>
             <Grid item xs={12} sm={4} style={{ margin: '25px' }}>
               <Paper square style={{ padding: '15px' }}>
-                <Typography
-                  variant='subtitle1'
-                  align='center'
-                  color='secondary'
-                >
+                <Typography variant='h5' align='center' color='secondary'>
                   หาช่างภาพตามภูมิภาค
                 </Typography>
                 <hr />

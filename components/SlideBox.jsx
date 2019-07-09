@@ -1,5 +1,6 @@
 import React from 'react'
 import AliceCarousel from 'react-alice-carousel'
+import { Typography } from '@material-ui/core'
 
 const SlideBox = () => {
   const handleOnDragStart = e => e.preventDefault()
@@ -31,6 +32,7 @@ const SlideBox = () => {
             className='yours-custom-class'
             style={{ width: '100%' }}
           />
+          <Typography variant='body2'>wefwefwefwefwefwe</Typography>
         </div>
         <div style={{ margin: '15px' }}>
           <img
@@ -39,6 +41,7 @@ const SlideBox = () => {
             className='yours-custom-class'
             style={{ width: '100%' }}
           />
+          <Typography variant='body2'>wefwefwefwefwefwe</Typography>
         </div>
         <div style={{ margin: '15px' }}>
           <img
@@ -47,6 +50,7 @@ const SlideBox = () => {
             className='yours-custom-class'
             style={{ width: '100%' }}
           />
+          <Typography variant='body2'>wefwefwefwefwefwe</Typography>
         </div>
         <div style={{ margin: '15px' }}>
           <img
@@ -55,6 +59,7 @@ const SlideBox = () => {
             className='yours-custom-class'
             style={{ width: '100%' }}
           />
+          <Typography variant='body2'>wefwefwefwefwefwe</Typography>
         </div>
         <div style={{ margin: '15px' }}>
           <img
@@ -63,6 +68,7 @@ const SlideBox = () => {
             className='yours-custom-class'
             style={{ width: '100%' }}
           />
+          <Typography variant='body2'>wefwefwefwefwefwe</Typography>
         </div>
       </AliceCarousel>
     </div>

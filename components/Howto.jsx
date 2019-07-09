@@ -13,7 +13,7 @@ const Howto = () => {
   const textDetail = { maxWidth: '315px', margin: 'auto' }
 
   return (
-    <div style={{ marginTop: '50px' }}>
+    <div style={{ marginTop: '50px', maxWidth: '1280px', margin: 'auto' }}>
       <Typography
         variant='h3'
         style={{ textAlign: 'center', marginBottom: '50px' }}

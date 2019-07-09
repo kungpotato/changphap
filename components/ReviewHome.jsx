@@ -14,7 +14,7 @@ import CardMedia from '@material-ui/core/CardMedia'
 import '../styles/homeStyle.scss'
 import AliceCarousel from 'react-alice-carousel'
 
-const LastProfile = () => {
+const ReviewHome = () => {
   useEffect(() => {}, [])
 
   const imgTest =
@@ -40,18 +40,25 @@ const LastProfile = () => {
   }
 
   return (
-    <Grid style={{ marginBottom: '50px', maxWidth: '1280px', margin: 'auto' }}>
+    <Grid
+      style={{
+        marginBottom: '50px',
+        maxWidth: '1280px',
+        margin: 'auto',
+      }}
+    >
       <Typography
         variant='h3'
-        style={{ textAlign: 'center', marginBottom: '50px' }}
+        style={{ textAlign: 'center', marginBottom: '50px', marginTop: '20px' }}
       >
-        ผลงานล่าสุด
+        รีวิวจากผู้จ้าง
       </Typography>
       <AliceCarousel
         container
         buttonsDisabled
         dotsDisabled
-        mouseDragDisabled
+        mouseDragEnabled
+        autoPlay
         autoPlayInterval={2000}
         duration={500}
         responsive={slideResponse}
@@ -426,4 +433,4 @@ const LastProfile = () => {
   )
 }
 
-export default LastProfile
+export default ReviewHome

@@ -2,7 +2,10 @@ import React from 'react'
 import App, { Container } from 'next/app'
 import '../styles/styles.scss'
 import { ThemeProvider } from '@material-ui/styles'
+import { MuiPickersUtilsProvider } from '@material-ui/pickers'
 import theme from '../theme'
+import DateFnsUtils from '@date-io/date-fns'
+import thLocale from 'date-fns/locale/th'
 
 class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {
@@ -26,9 +29,11 @@ class MyApp extends App {
     const { Component, pageProps } = this.props
     return (
       <ThemeProvider theme={theme}>
-        <Container>
-          <Component {...pageProps} />
-        </Container>
+        <MuiPickersUtilsProvider utils={DateFnsUtils} locale={thLocale}>
+          <Container>
+            <Component {...pageProps} />
+          </Container>
+        </MuiPickersUtilsProvider>
       </ThemeProvider>
     )
   }

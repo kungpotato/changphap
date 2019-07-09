@@ -1,0 +1,12 @@
+.cardPort:hover {
+  -webkit-box-shadow: 0px 0px 11px -1px rgba(0, 0, 0, 0.53);
+  -moz-box-shadow: 0px 0px 11px -1px rgba(0, 0, 0, 0.53);
+  box-shadow: 0px 0px 11px -1px rgba(0, 0, 0, 0.53);
+  transform: translate(0, -2px);
+}
+.cardPort {
+  cursor: pointer;
+  border-radius: 0 !important;
+  transition: all 0.2s ease-in-out !important;
+  will-change: transform !important;
+}

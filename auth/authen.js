@@ -1,6 +1,41 @@
 import * as firebase from 'firebase/app'
 import Firebase from '../firebase'
 
+export const createUserLocal = (email, password) => {
+  Firebase.auth()
+    .createUserWithEmailAndPassword(email, password)
+    .catch(function(error) {
+      // Handle Errors here.
+      var errorCode = error.code
+      var errorMessage = error.message
+      console.log(errorCode, errorMessage)
+      // ...
+    })
+}
+
+export const getUserLocal = (email, password) => {
+  let User = null
+
+  Firebase.auth()
+    .signInWithEmailAndPassword(email, password)
+    .catch(function(error) {
+      // Handle Errors here.
+      var errorCode = error.code
+      var errorMessage = error.message
+      console.log(errorCode, errorMessage)
+
+      // ...
+    })
+  Firebase.auth().onAuthStateChanged(function(user) {
+    console.log(user)
+    if (user) {
+      User = user
+    }
+  })
+
+  return User
+}
+
 export const getsUserFromGoogle = () => {
   // var id_token = googleUser.getAuthResponse().id_token
   const provider = new firebase.auth.GoogleAuthProvider()
@@ -71,4 +106,17 @@ export const getsUserFromFacebook = () => {
       })
   })
   return authen
+}
+
+export const signOutUser = () => {
+  Firebase.auth()
+    .signOut()
+    .then(function() {
+      console.log('signed out')
+      // Sign-out successful.
+    })
+    .catch(function(error) {
+      console.log(error)
+      // An error happened.
+    })
 }
