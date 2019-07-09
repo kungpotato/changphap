@@ -14,6 +14,7 @@ import {
 import CloseIcon from '@material-ui/icons/Close'
 import { DatePicker } from '@material-ui/pickers'
 import { makeStyles } from '@material-ui/styles'
+import { addNewUser } from '../services/userService'
 
 const useStyle = makeStyles(theme => {
   //console.log(theme.palette.primary)
@@ -37,14 +38,20 @@ const fields = [
   { label: 'รหัสผ่าน', name: 'password', type: 'password' },
   { label: 'ชื่อ', name: 'name', type: 'text' },
   { label: 'นามสกุล', name: 'lastName', type: 'text' },
-  { label: 'อีเมลล์', name: 'email', type: 'email' },
+  { label: 'อีเมลล์', name: 'email', type: 'text' },
   { label: 'เบอร์โทรศัพท์', name: 'phone', type: 'number' },
-  { label: 'วันเกิด', name: 'birthday', type: 'date' },
-  { label: 'ที่อยู่', name: 'address', type: 'text' },
+  // { label: 'วันเกิด', name: 'birthday', type: 'date' },
+  //{ label: 'ที่อยู่', name: 'address', type: 'text' },
 ]
 
 const RegisDialog = ({ open, handleClose }) => {
   const classes = useStyle()
+  const [username, setUsername] = useState('')
+  const [password, setPassword] = useState('')
+  const [name, setName] = useState('')
+  const [lastName, setLastName] = useState('')
+  const [email, setEmail] = useState('')
+  const [phone, setPhone] = useState('')
 
   const [selectedDate, setSelectedDate] = useState(null)
   const handleDateChange = date => {
@@ -53,6 +60,12 @@ const RegisDialog = ({ open, handleClose }) => {
   const handleCloseDialog = () => {
     handleClose(false)
   }
+
+  const handleSave = () => {
+    //e.preventDefault()
+    addNewUser(username, password, name, lastName, email, phone)
+  }
+
   return (
     <Dialog
       fullScreen
@@ -78,56 +91,88 @@ const RegisDialog = ({ open, handleClose }) => {
             >
               กรุณากรอกข้อมูล
             </Typography>
-            <Button
-              style={{ color: '#fff', fontSize: '18px' }}
-              onClick={handleClose}
-            >
-              save
-            </Button>
           </Toolbar>
         </Container>
       </AppBar>
-      <Container maxWidth='lg'>
+      <Container maxWidth='lg' style={{ marginTop: '20px' }}>
         <Grid container spacing={3} justify='space-around'>
           <Grid item xs={12} sm={4}>
-            {fields.map(item => {
-              return item.name !== 'address' && item.name !== 'birthday' ? (
-                <TextField
-                  key={item.name}
-                  label={item.label}
-                  name={item.name}
-                  fullWidth
-                  margin='normal'
-                  variant='outlined'
-                />
-              ) : item.name === 'birthday' ? (
-                <DatePicker
-                  key={item.name}
-                  label={item.name}
-                  name={item.name}
-                  fullWidth
-                  margin='normal'
-                  variant='dialog'
-                  inputVariant='outlined'
-                  value={selectedDate}
-                  onChange={handleDateChange}
-                  format='dd/MM/yyyy'
-                  views={['date', 'month', 'year']}
-                />
-              ) : (
-                <TextField
-                  key={item.name}
-                  label={item.name}
-                  name={item.name}
-                  fullWidth
-                  margin='normal'
-                  multiline={true}
-                  rows={3}
-                  rowsMax={3}
-                  variant='outlined'
-                />
-              )
-            })}
+            <form onSubmit={handleSave}>
+              <Button
+                style={{ float: 'right', color: '#fff' }}
+                type='submit'
+                variant='contained'
+                color='primary'
+              >
+                save
+              </Button>
+              {fields.map(item => {
+                return item.name !== 'address' && item.name !== 'birthday' ? (
+                  <TextField
+                    key={item.name}
+                    label={item.label}
+                    name={item.name}
+                    type={item.type}
+                    value={
+                      item.name === 'username'
+                        ? username
+                        : item.name === 'password'
+                        ? password
+                        : item.name === 'name'
+                        ? name
+                        : item.name === 'lastName'
+                        ? lastName
+                        : item.name === 'phone'
+                        ? phone
+                        : item.name === 'email' && email
+                    }
+                    onChange={({ target: { value } }) => {
+                      item.name === 'username'
+                        ? setUsername(value)
+                        : item.name === 'password'
+                        ? setPassword(value)
+                        : item.name === 'name'
+                        ? setName(value)
+                        : item.name === 'lastName'
+                        ? setLastName(value)
+                        : item.name === 'phone'
+                        ? setPhone(value)
+                        : item.name === 'email' && setEmail(value)
+                    }}
+                    fullWidth
+                    required
+                    margin='normal'
+                    variant='outlined'
+                  />
+                ) : item.name === 'birthday' ? (
+                  <DatePicker
+                    key={item.name}
+                    label={item.name}
+                    name={item.name}
+                    fullWidth
+                    margin='normal'
+                    variant='dialog'
+                    inputVariant='outlined'
+                    value={selectedDate}
+                    onChange={handleDateChange}
+                    format='dd/MM/yyyy'
+                    views={['date', 'month', 'year']}
+                  />
+                ) : (
+                  <TextField
+                    key={item.name}
+                    label={item.name}
+                    name={item.name}
+                    fullWidth
+                    margin='normal'
+                    multiline={true}
+                    rows={3}
+                    rowsMax={3}
+                    variant='outlined'
+                  />
+                )
+              })}
+            </form>
           </Grid>
         </Grid>
         <Typography variant='body1'></Typography>
