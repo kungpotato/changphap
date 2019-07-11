@@ -1,6 +1,9 @@
 {
   "name": "changphap",
   "version": "1.0.0",
+  "engines": {
+    "node": "10.15.3"
+  },
   "private": true,
   "description": "",
   "main": "index.js",
