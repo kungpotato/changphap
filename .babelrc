@@ -3,7 +3,9 @@
     "@babel/preset-env",
     "@babel/preset-react",
     "@babel/preset-flow",
-    "next/babel"
+    "next/babel",
+    "env",
+    "react"
   ],
   "plugins": [
     "emotion",
